@@ -1,0 +1,28 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    margin-top: 100px;
+    height: 100vh;
+    padding: 15px;
+}
+
+.product-card {
+    width: 250px;
+    height: 350px;
+    border: 1px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+.product-card  img {
+    width: 240px;
+}
+
+.product-info {
+    border-top: 1px solid black;
+}

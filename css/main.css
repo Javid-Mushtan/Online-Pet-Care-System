@@ -1,0 +1,70 @@
+/*-------- Header ---------*/
+
+body {
+    position: relative;
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    padding: 10px;
+    background-color: aquamarine;
+}
+
+.hb_menu {
+    margin-top: 20px;
+}
+
+.hb_menu > div{
+    background-color: black;
+    height: 8px;
+    width: 50px;
+    margin: 5px;
+}
+
+#logo {
+    margin-left: 50px;
+}
+
+nav form {
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 85%;
+}
+
+/* nav input {
+    width: ;
+} */
+
+/* ---------- Hamburger-Menu ---------*/
+
+/* credit: Treehouse Youtube channel : https://youtu.be/aNDqzlAKmZc*/
+.off-screen-menu {
+    background-color: gray;
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+    position: fixed;
+    margin-top: 100px;
+    top: 0;
+    left: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+
+.off-screen-menu.active {
+    left: 0;
+}

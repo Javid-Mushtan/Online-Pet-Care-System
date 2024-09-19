@@ -1,0 +1,64 @@
+
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+table {
+    width: 60%;
+    float: left;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.item-count > * {
+    display: inline;
+}
+
+.product-image {
+    width: 100px;
+}
+
+#cart-summary {
+    width: 200px;
+    height: 250px;
+    border: 1px solid black;
+    /* border-radius: 0.75rem;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4); */
+    padding: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+    float: right;
+}
+
+#label {
+    font-size: 25px;
+    color: gray;
+}
+
+#amount {
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+#cart-summary button {
+    width: 100%;
+    padding: 20px 25px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    border: none;
+    margin-top: 70px;
+}
+
+#cart-summary button:hover {
+    background-color: rgb(60, 60, 255);
+    cursor: pointer;
+}
+
