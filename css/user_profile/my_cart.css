@@ -25,8 +25,9 @@ table, th, td {
 }
 
 #cart-summary {
-    width: 200px;
+    width: 300px;
     height: 250px;
+    margin-right: 100px;
     border: 1px solid black;
     /* border-radius: 0.75rem;
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4); */
@@ -54,7 +55,7 @@ table, th, td {
     color: white;
     background-color: blue;
     border: none;
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 #cart-summary button:hover {

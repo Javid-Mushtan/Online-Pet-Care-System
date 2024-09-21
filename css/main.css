@@ -24,6 +24,10 @@ nav {
     margin-top: 20px;
 }
 
+.hb_menu:hover {
+    cursor: pointer;
+}
+
 .hb_menu > div{
     background-color: black;
     height: 8px;
@@ -67,4 +71,27 @@ nav form {
 
 .off-screen-menu.active {
     left: 0;
+}
+
+
+/*--------- Footer ---------*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    position: relative;
+    background-color: rgb(63, 63, 63);
+    height: 200px;
+    font-size: 1.5rem;
+    z-index: 10000;
+}
+
+footer .logo > *{
+    display: inline;
+}
+
+footer a {
+    text-decoration: none;
+    color:aliceblue;
 }

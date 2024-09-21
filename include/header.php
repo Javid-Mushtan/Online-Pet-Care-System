@@ -2,9 +2,10 @@
 
     <div class="off-screen-menu">
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <a href="#home"><li>Home</li></a>
+            <a href="#services"><li>Services</li></a>
+            <a href="#pharmacy"><li>Pharmacy</li></a>
+            <a href="pet_store.php"><li>Pet Store</li></a>
         </ul>
     </div>
 
@@ -22,6 +23,6 @@
             <button type="submit">search</button>
         </form>
 
-        <img id="user_profile_picture" src="assets/images/logo.jpeg" alt="" width="80px">
+        <a href="index.php"><img id="user_profile_picture" src="assets/images/logo.jpeg" alt="" width="80px"></a>
     </nav>
 </header>
