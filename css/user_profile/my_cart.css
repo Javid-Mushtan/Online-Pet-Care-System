@@ -37,6 +37,27 @@ table, th, td {
     float: right;
 }
 
+.delete-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
+}
+
+.update-amount-btn {
+    background-color: transparent;
+    border: none;
+    margin: 3px;
+    font-size: 18px;
+}
+
+.update-amount-btn:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
 #label {
     font-size: 25px;
     color: gray;

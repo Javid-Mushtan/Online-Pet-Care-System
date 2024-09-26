@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,6 +90,6 @@
 
     </div>
 
-    <!-- <?php require 'include/footer.php' ?> -->
+    <?php require 'include/footer.php' ?>
 </body>
 </html>

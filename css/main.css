@@ -4,7 +4,10 @@ body {
     position: relative;
 }
 
-
+.content {
+    height: 100vh;
+    margin-top: 150px;
+}
 
 header {
     position: fixed;
@@ -39,6 +42,12 @@ nav {
     margin-left: 50px;
 }
 
+.login-signup-btn {
+    height: 50px;
+    width: 80px;
+    margin: 5px;
+}
+
 nav form {
     margin-top: 30px;
     margin-left: 50px;
@@ -53,21 +62,35 @@ nav form {
 
 /* credit: Treehouse Youtube channel : https://youtu.be/aNDqzlAKmZc*/
 .off-screen-menu {
-    background-color: gray;
+    background-color: aliceblue;
     height: 100vh;
     width: 100%;
     max-width: 300px;
     position: fixed;
     margin-top: 100px;
-    top: 0;
+    top: 5px;
     left: -450px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
     font-size: 3rem;
     transition: .3s ease;
+    z-index: 1000;
 }
+
+.off-screen-menu li {
+    list-style: none;
+}
+
+.off-screen-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+/* .off-screen-menu a:hover {
+    background-color: aqua;
+} */
 
 .off-screen-menu.active {
     left: 0;
@@ -84,7 +107,7 @@ footer {
     background-color: rgb(63, 63, 63);
     height: 200px;
     font-size: 1.5rem;
-    z-index: 10000;
+    z-index: 900;
 }
 
 footer .logo > *{

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'process/connect_dbshop.php';
 
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
@@ -33,8 +34,9 @@
         <a href="#my_account" class="btn active">My Account</a>
         <a href="#my_pets" class="btn">My Pets</a>
         <a href="#my_pets" class="btn">My Appointments</a>
+        <a href="#order">My Orders</a>
         <a href="index.php" class="btn">My Cart</a>
-        <button id="log_out_btn">Log out</button>
+        <button id="log_out_btn"><a href="process/log_out.php">Log out</a></button>
     </div>
     
     <div class="content">
@@ -47,6 +49,7 @@
             $results = $conn->query($query);
 
             if ($results->num_rows > 0) {
+                $_SESSION['is_cart_empty'] = false;
             ?>
             <table>
                 <tr>
@@ -72,17 +75,18 @@
                     <td>Rs.<?php echo $product_price ?></td>
                     <td>
                         <div class="item-count">
-                            <button onclick="decreaseItemCount(<?php echo $product_id ?>)">-</button>
+                            <button onclick="decreaseItemCount(<?php echo $product_id ?>)" class="update-amount-btn">-</button>
                             <p id="item-count-<?php echo $product_id ?>"><?php echo $product_count ?></p>
-                            <button onclick="increaseItemCount(<?php echo $product_id ?>)">+</button>
+                            <button onclick="increaseItemCount(<?php echo $product_id ?>)" class="update-amount-btn">+</button>
                         </div>
                     </td>
-                    <td><button><a href="index.php?id=<?php echo $product_id ?>">delete</a></button></td>
+                    <td><a href="index.php?id=<?php echo $product_id ?>"><button class="delete-btn"><img src="assets/icons/delete_icon.png" alt=""></button></a></td>
                 </tr>
         
             <?php
                 }
             } else {
+                $_SESSION['is_cart_empty'] = true;
                 echo "Cart is Empty";
             }
 
@@ -90,13 +94,19 @@
         ?>
         </table>
 
-        <div id="cart-summary">
-            <p id="label">Total:</p>
-            <p id="amount"></p>
-            <a href="payment_portal.php"><button onclick="emptyCart()">Check Out</button></a>
-        </div>
+        <?php
+            if (!$_SESSION['is_cart_empty']) {
+                echo '
+                    <div id="cart-summary">
+                        <p id="label">Total:</p>
+                        <p id="amount"></p>
+                        <a href="payment_portal.php"><button>Check Out</button></a>
+                    </div>';
+            }
+        ?>
 
-        <a href="pet_store.php">Pet Store</a>
+        
+
     </div>
 
     <?php require 'include/footer.php' ?>
