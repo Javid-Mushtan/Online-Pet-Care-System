@@ -24,7 +24,7 @@
         function createRatingString($rating) {
             $string = "";
             for ($i = 0; $i < $rating; $i++) {
-                $string .= "*";
+                $string .= "⭐";
             }
 
             return $string;
@@ -37,10 +37,10 @@
                 $heading = "";
 
                 switch($section) {
-                    case 'food': $product_type = 0;
+                    case 'food': $product_type = "pet_food";
                                  $heading = "Food";
                                  break;
-                    case 'health': $product_type = 1;
+                    case 'health': $product_type = "pet_care";
                                    $heading = "Pet Care";
                                    break;
                 }
@@ -49,16 +49,16 @@
                 <h1><?php echo $heading ?> Section</h1>
     <?php
 
-                $query = "select * from productdata where product_type=$product_type";
+                $query = "select * from product_data where product_type='$product_type'";
                 $results = $conn->query($query);
 
                 if ($results->num_rows > 0) {
                     while ($row = $results->fetch_assoc()) {
-                        $product_id = $row['productId'];
-                        $product_name = $row['name'];
-                        $product_price = $row['price'];
+                        $product_id = $row['product_id'];
+                        $product_name = $row['product_name'];
+                        $product_price = $row['product_price'];
                         $product_rating = $row['product_rating'];
-                        $product_image = $row['image_path'];
+                        $product_image = $row['product_image_path'];
 
                         $rating_y = (int)$product_rating;
                         $rating_b = 5 - (int)$product_rating;
@@ -66,7 +66,7 @@
                         ?>                  
                         <div class="product-card">
                             <a href="product" class="product-link">
-                                <img src="assets/product_images/<?php echo $product_image?>" alt="" class="product-image">
+                                <img src="assets/images/product_images/<?php echo $product_image?>" alt="" class="product-image">
                                 <div class="product-info">
                                     <h2 class="product-name"><?php echo $product_name?></h2>
                                     <span class="product-rating"><span class="rating-yellow"><?php echo createRatingString($rating_y)?></span><span class="rating-black"><?php echo createRatingString($rating_b)?></span></span>

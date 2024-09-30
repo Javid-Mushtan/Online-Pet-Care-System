@@ -5,7 +5,7 @@
     <div class='off-screen-menu'>
         <ul>
             <a href='#home'><li>Home</li></a>
-            <a href='#services'><li>Services</li></a>
+            <a href='grooming.php'><li>Services</li></a>
             <a href='#pharmacy'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
         </ul>
@@ -18,15 +18,14 @@
             <div></div>
         </div>
 
-        <img id='logo' src='assets/images/logo.jpeg' alt='' width='80px'>
+        <a href='index.php'><img id='logo' src='assets/images/logo.jpeg' alt='' width='80px'></a>
 
         <form action=''>
             <input type='text'>
-            <button type='submit'>search</button>
+            <!--<button type='submit'>search</button>-->
         </form>
 
         <a href='".$_SESSION['profile_path']."'><img id='user_profile_picture' src='assets/images/logo.jpeg' alt='' width='80px'></a>
-        <p>".$_SESSION['userid']."</p>
     </nav>
 </header>";
     } else {
@@ -35,7 +34,7 @@
     <div class='off-screen-menu'>
         <ul>
             <a href='#home'><li>Home</li></a>
-            <a href='#services'><li>Services</li></a>
+            <a href='grooming.php'><li>Services</li></a>
             <a href='#pharmacy'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
         </ul>
@@ -48,15 +47,15 @@
             <div></div>
         </div>
 
-        <img id='logo' src='assets/images/logo.jpeg' alt='' width='80px'>
+        <a href='index.php'><img id='logo' src='assets/images/logo.jpeg' alt='' width='80px'></a>
 
         <form action=''>
             <input type='text'>
-            <button type='submit'>search</button>
+            <!--<button type='submit'>search</button>-->
         </form>
 
-        <a href='process/login.php'><button class='login-signup-btn'>Login</button></a>
-        <a href='process/sign_up.php'><button class='login-signup-btn'>Sign up</button></a>
+        <a href='login.php'><button class='login-signup-btn'>Login</button></a>
+        <a href='sign_up.php'><button class='login-signup-btn'>Sign up</button></a>
     </nav>
 </header>";
     }

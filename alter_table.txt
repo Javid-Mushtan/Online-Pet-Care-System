@@ -1,0 +1,23 @@
+alter table product_data add column `product_image_path` varchar(255) not null;
+
+update product_data set product_image_path='dog_shampoo.png' where product_id=100;
+update product_data set product_image_path='cat_food.jpeg' where product_id=101;
+update product_data set product_image_path='dog_food.jpeg' where product_id=102;
+update product_data set product_image_path='ground_dog_food.jpeg' where product_id=103;
+update product_data set product_image_path='hamster_wheel.jpeg' where product_id=104;
+
+update product_data set product_name='Dog Shampoo' where product_id=100;
+update product_data set product_name='Cat Food' where product_id=101;
+update product_data set product_name='Dog Food' where product_id=102;
+update product_data set product_name='Ground Dog Food' where product_id=103;
+update product_data set product_name='hamster Wheel' where product_id=104;
+
+update product_data set product_type='pet_care' where product_id=100;
+update product_data set product_type='pet_food' where product_id=101;
+update product_data set product_type='pet_food' where product_id=102;
+update product_data set product_type='pet_food' where product_id=103;
+update product_data set product_type='pet_care' where product_id=104;
+
+insert into employee(first_name, last_name, city, street, postal_code, email, password, service_provided, role)
+values('test', 'admin', 'test', 'test', 12345, 'admin@gmail.com', 'c93ccd78b2076528346216b3b2f701e6', 'admin', 'admin')
+

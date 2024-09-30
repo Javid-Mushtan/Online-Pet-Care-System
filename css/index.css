@@ -1,0 +1,45 @@
+#def{
+    margin: 10% 60% 40% 10%;
+    background-color: rgb(246, 246, 243);
+}
+
+.navbar{
+    background-color: rgb(0, 0, 0);
+    padding: 0px 0px 1% 0px;
+}
+.sbutton{
+    padding: 10px 20px 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.search{
+    margin-top: 15px;
+    margin-left: 450px;
+    padding-right: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.signin, .signup{
+    text-decoration: none;
+    font-weight: bold;
+    color: aliceblue;
+    font-size: 15px;
+    padding: 10px 10px 10px 10px;
+}
+.signup{
+    margin-right: 10px;
+}
+.signin{
+    margin-left: 90px;
+}
+.signup:hover,.signin:hover,.sbutton:hover{
+    background-color: gray;
+}
+.hero-image,
+.service-item img{
+    float: right;
+    padding-top: 100px;
+    padding-right: 100px;
+    width: 400px;
+    height: 300px;
+}

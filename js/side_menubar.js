@@ -10,4 +10,3 @@ menu_buttons.forEach(btn => {
     })
 });
 
-console.log(menu_buttons)

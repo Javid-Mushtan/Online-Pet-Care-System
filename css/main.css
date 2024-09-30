@@ -1,14 +1,23 @@
+
 /*-------- Header ---------*/
 
 body {
     position: relative;
+    margin: 0;
 }
 
 .content {
-    height: 100vh;
-    margin-top: 150px;
+    height: fit-content;
+    margin-top: 100px;
 }
 
+.profile {
+    margin-left: 300px;
+    margin-top: 100px;
+    padding: 5px 16px;
+    height: 100vh;
+    padding: 20px;
+}
 header {
     position: fixed;
     top: 0;
@@ -103,9 +112,9 @@ footer {
     justify-content: space-between;
     align-items: center;
     color: aliceblue;
-    position: relative;
     background-color: rgb(63, 63, 63);
     height: 200px;
+
     font-size: 1.5rem;
     z-index: 900;
 }

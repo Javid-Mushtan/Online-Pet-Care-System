@@ -4,12 +4,12 @@
 
     function emptyCart($id) {
         global $conn;
-        $empty_cart_query = "delete from cart where userId=$id";
+        $empty_cart_query = "delete from cart where customer_id=$id";
         $conn->query($empty_cart_query);
     }
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $userid = 1;
+        $userid = $_SESSION['userid'];
         $card_number = $_POST['card-number'];
         $exp_date = $_POST['exp-date'];
         $cvc = $_POST['cvc'];
@@ -18,7 +18,7 @@
         if (isset($_POST['option'])) {
             $save = $_POST['option'];
             if ($save == "save") {
-                $save_card_query = "insert into credit_card_data(name, cardNo, cvc, expDate, userId) values('$name', $card_number, $cvc, '$exp_date', $userid);";
+                $save_card_query = "insert into payment_info(customer_id, customer_name, card_number, expiry_date, card_verification_code) values($userid, '$name', '$card_number', '$exp_date', '$cvc');";
                 $conn->query($save_card_query);
             }
         }
@@ -53,13 +53,13 @@
         <div class="panel" id="card">
             <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" id="card-form">
                 <label for="card-number">Card Number</label><br>
-                <input type="number" name="card-number" id="card-number"><br>
+                <input type="text" name="card-number" id="card-number"><br>
 
                 <label for="exp-date">Expiry Date</label><br>
                 <input type="text" name="exp-date" id="exp-date"><br>
 
                 <label for="cvc">CVC</label><br>
-                <input type="number" name="cvc" id="cvc" min="100" max="999"><br>
+                <input type="text" name="cvc" id="cvc" min="100" max="999"><br>
 
                 <label for="name">Name on Card</label><br>
                 <input type="text" name="name" id="name"><br>

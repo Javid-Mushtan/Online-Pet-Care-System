@@ -1,18 +1,19 @@
 <?php
+    session_start();
     require '../../connect_dbshop.php';
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
        if (isset($_POST['action'])) {
         $action = $_POST['action'];
         $product_id = $_POST['product_id'];
-        // $user_id = $_POST['user_id'];
+        $user_id = $_SESSION['userid'];
         $query = "";
 
         switch ($action) {
             case 'add':
                 header("Content-Type: application/json");
                 $user_id = 1;
-                $query = "SELECT * FROM cart WHERE productId=$product_id";
+                $query = "SELECT * FROM Cart WHERE product_id=$product_id";
                 $results = $conn->query($query);
 
                 if ($results->num_rows > 0) {
@@ -22,7 +23,7 @@
                     ]);
                     exit;
                 } else {
-                    $add_query = "INSERT INTO cart(productId, userId, itemCount) VALUES($product_id, $user_id, 1)";
+                    $add_query = "INSERT INTO cart(product_id, customer_id, product_amount) VALUES($product_id, $user_id, 1)";
                     $conn->query($add_query);
                     echo json_encode([
                         "status"=>"success",
@@ -34,17 +35,17 @@
                 break;
 
             case 'decrease':
-                $query = "UPDATE cart SET itemCount=itemCount-1 WHERE productId=$product_id";
+                $query = "UPDATE cart SET product_amount=product_amount-1 WHERE product_id=$product_id";
                 $conn->query($query);
                 break;
 
             case 'increase':
-                $query = "UPDATE cart SET itemCount=itemCount+1 WHERE productId=$product_id";
+                $query = "UPDATE cart SET product_amount=product_amount+1 WHERE product_id=$product_id";
                 $conn->query($query);
                 break;
 
             case 'delete':
-                $query = "DELETE FROM cart WHERE productId=$product_id";
+                $query = "DELETE FROM cart WHERE product_id=$product_id";
                 $conn->query($query);
                 break;
         }
