@@ -1,19 +1,9 @@
-document.getElementById('btn-g').onclick = function() {
-        alert('Redirecting to booking page...');
-};
-document.getElementById('sbtn').onclick = function() {
-        var searchText = document.querySelector('.search').value;
-        if (searchText.trim() !== "") {
-            alert('You searched for: ' + searchText);
-        } 
-        else {
-            alert('Please enter a search term.');
+function toggleDropdown(){
+        var dropdown = document.getElementById("myDropdown");
+        if (dropdown.style.display==="none" || dropdown.style.display ==="") {
+            dropdown.style.display ="block";
+        } else {
+            dropdown.style.display ="none";
         }
-};
-document.getElementById('signin').onclick = function() {
-        alert('Redirecting to Sign-Up page...');
-};
-
-document.getElementById('signup').onclick = function() {
-        alert('Redirecting to Sign-In page...');
-};
+    }
+    

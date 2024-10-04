@@ -32,11 +32,11 @@ VALUES
 
 INSERT INTO Product_Data(product_name, product_price, product_rating, product_type, current_stock)
 VALUES
-('Dog Shampoo', 500.99, 4.7, 'Pet Care', 150),
-('Cat Flea Collar', 1000.00, 4.5, 'Pharmacy', 100),
-('Bird Cage Cleaner', 500.00, 4.3, 'Pet Care', 75),
-('Fish Antibiotic', 1500.75, 4.8, 'Pharmacy', 50),
-('Hamster Wheel', 2000.00, 4.6, 'Pet Care', 200);
+('Dog Shampoo', 500.99, 4.7, 'pet_care', 150),
+('Cat Flea Collar', 1000.00, 4.5, 'pharmacy', 100),
+('Bird Cage Cleaner', 500.00, 4.3, 'pet_care', 75),
+('Fish Antibiotic', 1500.75, 4.8, 'pharmacy', 50),
+('Hamster Wheel', 2000.00, 4.6, 'pet_care', 200);
 
 /* Insert values into Services table */
 
@@ -119,10 +119,10 @@ VALUES
 
 /* Insert values into Appointment table */
 
-INSERT INTO Appointment(customer_id, pet_id, service_id, appointment_date, appointment_time, checkin_date, checkout_date, vet_id, service_freq, postal_code, hostel_type)
+INSERT INTO Appointment(customer_id, pet_id, service_id, appointment_date, appointment_time, checkin_date, checkout_date, vet_id, service_freq, postal_code, hostel_type, status)
 VALUES
-(1000, 1, 500, '2024-09-30', '10:30:00', NULL, NULL, NULL, NULL, '12345', NULL),  
-(1001, 2, 501, '2024-10-01', '09:00:00', NULL, NULL, NULL, 'Weekly', '23456', NULL),  
-(1002, 3, 503, '2024-10-02', '11:00:00', NULL, NULL, 5002, NULL, '34567', NULL),  
-(1003, 1, 502, '2024-10-05', '08:45:00', '2024-10-04', '2024-10-06', NULL, NULL, '45678', 'Standard'),  
-(1004, 1, 500, '2024-10-30', '11:30:00', NULL, NULL, NULL, NULL, '12765', NULL); 
+(1000, 1, 500, '2024-09-30', '10:30:00', NULL, NULL, NULL, NULL, '12345', NULL, 'pending'),  
+(1001, 2, 501, '2024-10-01', '09:00:00', NULL, NULL, NULL, 'Weekly', '23456', NULL, 'pending'),  
+(1002, 3, 503, '2024-10-02', '11:00:00', NULL, NULL, 5002, NULL, '34567', NULL, 'apporoved'),  
+(1003, 1, 502, '2024-10-05', '08:45:00', '2024-10-04', '2024-10-06', NULL, NULL, '45678', 'Standard', 'approved'),  
+(1004, 1, 500, '2024-10-30', '11:30:00', NULL, NULL, NULL, NULL, '12765', NULL, 'pending'); 

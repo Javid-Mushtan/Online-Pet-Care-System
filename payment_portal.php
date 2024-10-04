@@ -25,7 +25,7 @@
         emptyCart($userid);
 
         $conn->close();
-        header("Location: index.php");
+        header("Location: my_cart.php");
         exit;
     }
 ?>

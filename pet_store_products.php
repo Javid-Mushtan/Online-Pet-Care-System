@@ -69,7 +69,7 @@
                                 <img src="assets/images/product_images/<?php echo $product_image?>" alt="" class="product-image">
                                 <div class="product-info">
                                     <h2 class="product-name"><?php echo $product_name?></h2>
-                                    <span class="product-rating"><span class="rating-yellow"><?php echo createRatingString($rating_y)?></span><span class="rating-black"><?php echo createRatingString($rating_b)?></span></span>
+                                    <span class="product-rating"><span class="rating-yellow"><?php echo createRatingString($rating_y)?></span></span>
                                     <p class="product-price">Rs.<?php echo $product_price?></p>
                                 </div>
                             </a>

@@ -187,6 +187,7 @@ CREATE TABLE Appointment(
  service_freq varchar(20),
  postal_code int,
  hostel_type varchar(50),
+ status varchar(50) not null;
  
  CONSTRAINT APPOINTMENT_FK_USER_ID FOREIGN KEY(customer_id) REFERENCES User_Data(user_id) on DELETE CASCADE on UPDATE CASCADE,
  CONSTRAINT APPOINTMENT_FK_PET_ID FOREIGN KEY(pet_id) REFERENCES Pet_Data(pet_id) on DELETE CASCADE on UPDATE CASCADE,

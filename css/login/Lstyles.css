@@ -18,7 +18,8 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
-    margin-top: 100px;
+    margin-bottom: 200px;
+
 }
 .login-box {
     background-color: #fff;

@@ -23,9 +23,5 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter your password.');
             return; // Stop further execution
         }
-
-        
-
-        alert('Login details are valid!'); // Example alert
     });
 });

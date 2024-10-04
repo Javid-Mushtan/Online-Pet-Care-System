@@ -14,7 +14,7 @@
 
         } else if ($user_type == "employee") {
             $query = "select * from employee where email='$email'";
-            $_SESSION['profile_path'] = "admin_panel.php";
+            $_SESSION['profile_path'] = "dashboard.php";
 
         }
 
@@ -33,6 +33,8 @@
                 }
 
                 $_SESSION['role'] = $row['role'];
+                $_SESSION['profile_picture'] = $row['user_image_path'];
+
                 
                 header("Location: ../index.php");
                 exit;

@@ -17,19 +17,19 @@
         <div class="wrapper">
             
             <div class="banner">
-                <img src="assets/product_images/cat_food.jpeg" alt="">
+                <img src="assets/images/product_images/cat_food.jpeg" alt="">
                 <p class="offer-info">Nationalasdfsdfsdfsdfdfsdsdfdfdf</p>
                 <button>Learn More</button>
             </div>
     
             <div class="banner">
-                <img src="assets/product_images/dog_food.jpeg" alt="">
+                <img src="assets/images/product_images/dog_food.jpeg" alt="">
                 <p class="offer-info">Nationalasdfsdfsdfsdfdfsdsdfdfdf</p>
                 <button>Learn More</button>
             </div>
 
             <div class="banner">
-                <img src="assets/product_images/dog_food.jpeg" alt="">
+                <img src="assets/images/product_images/dog_food.jpeg" alt="">
                 <p class="offer-info">Nationalasdfsdfsdfsdfdfsdsdfdfdf</p>
                 <button>Learn More</button>
             </div>
@@ -46,19 +46,19 @@
 
     <div class="product-categories">
         <div class="category">
-            <img src="assets/product_images/cat_food.jpeg" alt="">
+            <img src="assets/images/product_images/cat_food.jpeg" alt="">
             <a href="pet_store_products.php?section=food"><button>Food</button></a>
         </div>
         <div class="category">
-            <img src="assets/product_images/cat_food.jpeg" alt="">
+            <img src="assets/images/product_images/cat_food.jpeg" alt="">
             <a href="pet_store_products.php?section=health"><button>Pet Care</button></a>
         </div>
         <div class="category">
-            <img src="assets/product_images/cat_food.jpeg" alt="">
+            <img src="assets/images/product_images/cat_food.jpeg" alt="">
             <a href="pet_store_products.php?section=treats"><button>Treats</button></a>
         </div>
         <div class="category">
-            <img src="assets/product_images/cat_food.jpeg" alt="">
+            <img src="assets/images/product_images/cat_food.jpeg" alt="">
             <a href="pet_store_products.php?section=clearance"><button>Clearance</button></a>
         </div>
     </div>

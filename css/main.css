@@ -4,6 +4,7 @@
 body {
     position: relative;
     margin: 0;
+    background-color: #f4f4f4;
 }
 
 .content {
@@ -24,6 +25,10 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
+}
+
+#user_profile_picture {
+    border-radius: 50%;
 }
 
 nav {
@@ -49,23 +54,47 @@ nav {
 
 #logo {
     margin-left: 50px;
+    border-radius: 50%;
 }
 
 .login-signup-btn {
     height: 50px;
     width: 80px;
-    margin: 5px;
+    margin: 15px 5px 0 0;
+}
+
+.search-btn {
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid black;
+}
+
+.search-btn img {
+    width: 30px;
 }
 
 nav form {
-    margin-top: 30px;
-    margin-left: 50px;
-    width: 85%;
+    margin-top: 20px;
+    margin-left: 300px;
+    margin-right: 250px;
+    height: 40px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid black;
+    width: 600px;
+
 }
 
-/* nav input {
-    width: ;
-} */
+nav input {
+    width: 540px;
+    height: 40px;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
 
 /* ---------- Hamburger-Menu ---------*/
 

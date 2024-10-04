@@ -6,7 +6,7 @@
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
 
-            $query = "DELETE FROM cart WHERE item_id=$id";
+            $query = "DELETE FROM cart WHERE product_id=$id";
             $conn->query($query);
         }
     }
@@ -83,7 +83,7 @@
                             <button onclick="increaseItemCount(<?php echo $product_id ?>)" class="update-amount-btn">+</button>
                         </div>
                     </td>
-                    <td><a href="index.php?id=<?php echo $product_id ?>"><button class="delete-btn"><img src="assets/icons/delete_icon.png" alt=""></button></a></td>
+                    <td><a href="<?php echo $_SERVER['PHP_SELF'] ?>?id=<?php echo $product_id ?>"><button class="delete-btn"><img src="assets/icons/delete_icon.png" alt=""></button></a></td>
                 </tr>
 
             <?php

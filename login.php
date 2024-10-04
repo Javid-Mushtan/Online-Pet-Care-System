@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/login/Lstyles.css">
 </head>
 <body>
-    <?php require 'include/header.php' ?>
+    <!-- <?php require 'include/header.php' ?> -->
 
     <div class="content">
 
@@ -56,7 +56,7 @@
     <?php require 'include/footer.php' ?>
 
     <script src="js/main.js"></script>
-    <script src="js/login/login.js"></script>
+    <!-- <script src="js/login/login.js"></script> -->
 
 </body>
 </html>

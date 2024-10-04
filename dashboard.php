@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="profile_menu.css">
+    <link rel="stylesheet" href="css/profile_menu.css">
     <link rel="stylesheet" href="css/admin_panel/dashboard.css">
     <script src="js/main.js" defer></script>
     <script src="js/profile_router.js" defer></script>
@@ -18,7 +18,7 @@
         <div class="sidebar">
             <a href="#dashboard" class="btn active">Dashboard</a>
             <a href="#user" class="btn">Users</a>
-            <a href="#mapp" class="btn">Appointments</a>
+            <a href="appointments.php" class="btn">Appointments</a>
             <a href="#order" class="btn">Services</a>
             <button id="log-out-btn"><a href="process/log_out.php">Log out</a></button>
         </div>

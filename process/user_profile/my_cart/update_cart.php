@@ -12,8 +12,7 @@
         switch ($action) {
             case 'add':
                 header("Content-Type: application/json");
-                $user_id = 1;
-                $query = "SELECT * FROM Cart WHERE product_id=$product_id";
+                $query = "SELECT * FROM Cart WHERE product_id=$product_id AND customer_id=$user_id";
                 $results = $conn->query($query);
 
                 if ($results->num_rows > 0) {

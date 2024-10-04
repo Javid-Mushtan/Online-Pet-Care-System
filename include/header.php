@@ -1,12 +1,13 @@
 <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+        $profile_picture = $_SESSION['profile_picture'];
         echo "<header>
 
     <div class='off-screen-menu'>
         <ul>
-            <a href='#home'><li>Home</li></a>
+            <a href='index.php'><li>Home</li></a>
             <a href='grooming.php'><li>Services</li></a>
-            <a href='#pharmacy'><li>Pharmacy</li></a>
+            <a href='pharmacy.php'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
         </ul>
     </div>
@@ -22,10 +23,10 @@
 
         <form action=''>
             <input type='text'>
-            <!--<button type='submit'>search</button>-->
+            <button type='submit' class='search-btn'><img src='assets/icons/search-icon.png'></button>
         </form>
 
-        <a href='".$_SESSION['profile_path']."'><img id='user_profile_picture' src='assets/images/logo.jpeg' alt='' width='80px'></a>
+        <a href='".$_SESSION['profile_path']."'><img id='user_profile_picture' src='assets/images/profile_pictures/$profile_picture' alt='' width='80px' height='80px'></a>
     </nav>
 </header>";
     } else {
@@ -33,9 +34,9 @@
 
     <div class='off-screen-menu'>
         <ul>
-            <a href='#home'><li>Home</li></a>
+            <a href='index.php'><li>Home</li></a>
             <a href='grooming.php'><li>Services</li></a>
-            <a href='#pharmacy'><li>Pharmacy</li></a>
+            <a href='pharmacy.php'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
         </ul>
     </div>
@@ -51,7 +52,7 @@
 
         <form action=''>
             <input type='text'>
-            <!--<button type='submit'>search</button>-->
+            <button type='submit' class='search-btn'><img src='assets/icons/search-icon.png'></button>
         </form>
 
         <a href='login.php'><button class='login-signup-btn'>Login</button></a>
