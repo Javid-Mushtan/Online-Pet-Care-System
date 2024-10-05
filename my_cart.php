@@ -31,10 +31,9 @@
     
     <div class="grid-container">
         <div class="sidebar">
-            <a href="#my_account" class="btn active">My Account</a>
-            <a href="#my_pets" class="btn">My Pets</a>
-            <a href="#my_pets" class="btn">My Appointments</a>
-            <a href="#order" class="btn">My Orders</a>
+            <a href="user_profile.php" class="btn active">My Account</a>
+            <a href="my_pets.php" class="btn">My Pets</a>
+            <a href="my_appointments.php" class="btn">My Appointments</a>
             <a href="my_cart.php" class="btn">My Cart</a>
             <button id="log-out-btn"><a href="process/log_out.php">Log out</a></button>
         </div>

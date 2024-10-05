@@ -6,7 +6,7 @@
         if (isset($_POST['method'])) {
             $method = $_POST['method'];
             $userid = $_SESSION['userid'];
-
+            
             switch ($method) {                
                 case 'getcard':
                     header("Content-Type: application/json");
@@ -30,6 +30,34 @@
                     }
                     echo json_encode($credit_card_data);
                     exit;
+                
+                case 'getaddress':
+                    header("Content-Type: application/json");
+                    $check_address_availabitilty = "select u.first_name, u.last_name, u.street, u.city, u.postal_code, p.phone_num from user_data u, user_phone p where u.user_id=$userid and p.user_id=$userid ";
+                    $results = $conn->query($check_address_availabitilty);
+
+                    if ($results->num_rows > 0) {
+                        $row = $results->fetch_assoc();
+                        $address_data = [
+                            "status"=>"success",
+                            "name"=>$row['first_name']." ".$row['last_name'],
+                            "street"=>$row['street'],
+                            "city"=>$row['city'],
+                            "postal_code"=>$row['postal_code'],
+                            "mobile_num"=>$row['phone_num']
+                        ];
+
+                    } else {
+                        $address_data = [
+                            "status"=>"error"
+                        ];
+                    }
+
+                    echo json_encode($address_data);
+                    exit;
+
+                    break;
+
                 }
         }
 

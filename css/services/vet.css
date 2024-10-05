@@ -1,0 +1,58 @@
+
+
+/*---------------------------------    Book vet Hostel ------------------------------------------------------- */
+
+/* Title Section Styling */
+.title-section {
+    text-align: center; /* Center the title text */
+    margin: 20px 0; /* Add vertical margins around the title */
+}
+
+.title-section h2 {
+    font-size: 24px; /* Set the font size for the title */
+}
+
+/* Vet Cards Section Styling */
+.vet-list {
+    display: flex; /* Use flexbox to align vet cards horizontally */
+    flex-wrap: wrap; /* Allow vet cards to wrap to the next line */
+    justify-content: center; /* Center vet cards horizontally */
+    gap: 20px; /* Add space between vet cards */
+    padding: 20px; /* Add padding around the vet cards section */
+}
+
+/* Vet Card Styling */
+.vet-card {
+    background-color: rgb(251, 234, 234); /* White background color for the vet card */
+    border-radius: 10px; /* Round the corners of the vet card */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.203); /* Add a subtle shadow around the card */
+    width: 200px; /* Fixed width for the vet card */
+    padding: 15px; /* Add padding inside the card */
+    text-align: center; /* Center text inside the card */
+}
+
+/* Vet Image Styling */
+.vet-image {
+    width: 100px; /* Set width for the vet image */
+    height: 100px; /* Set height for the vet image */
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 10px; /* Add space below the image */
+}
+
+/* Appointment Button Styling */
+.appointment-btn {
+    background-color: #007BFF; /* Blue background color for the button */
+    color: white; /* White text color for contrast */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round the corners of the button */
+    padding: 10px; /* Add padding inside the button */
+    margin: 10px 0; /* Add vertical margins around the button */
+    width: 100%; /* Make the button span the full width of the card */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition effect for background color change */
+}
+
+/* Appointment Button Hover Styling */
+.appointment-btn:hover {
+    background-color: #0056b3; /* Darker blue color on hover for visual feedback */
+}

@@ -4,7 +4,7 @@
 body {
     position: relative;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #eae4ddb8;
 }
 
 .content {
@@ -34,7 +34,7 @@ header {
 nav {
     display: flex;
     padding: 10px;
-    background-color: aquamarine;
+    background-color: #295f98;
 }
 
 .hb_menu {
@@ -105,7 +105,7 @@ nav input {
     width: 100%;
     max-width: 300px;
     position: fixed;
-    margin-top: 100px;
+    margin-top: 99px;
     top: 5px;
     left: -450px;
     display: flex;
@@ -141,7 +141,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     color: aliceblue;
-    background-color: rgb(63, 63, 63);
+    background-color: #343a40;
     height: 200px;
 
     font-size: 1.5rem;
@@ -156,3 +156,4 @@ footer a {
     text-decoration: none;
     color:aliceblue;
 }
+

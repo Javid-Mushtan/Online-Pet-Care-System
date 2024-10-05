@@ -1,0 +1,96 @@
+/* Title Section Styling */
+.title-section {
+    text-align: center; /* Center the title text */
+    margin: 20px 0; /* Add vertical margins around the title */
+}
+
+.title-section h2 {
+    font-size: 24px; /* Set the font size for the title */
+}
+
+
+
+/*---------------------------------    Book Pet Hostel ------------------------------------------------------- */
+
+
+/* Image Section Styling */
+.image-section {
+    text-align: center; /* Center the image horizontally */
+    padding: 20px; /* Add padding around the image */
+}
+
+.image-section img {
+    max-width: 100%; /* Make the image responsive */
+    height: 200px; /* Fixed height for the image */
+}
+
+/* Booking Form Styling */
+.booking-form {
+    display: flex; /* Use flexbox to align form elements in a row */
+    justify-content: center; /* Center the form elements horizontally */
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Add space between form elements */
+    padding: 20px; /* Add padding around the form */
+    background-color: #554242e0; /* Dark background with some transparency */
+    box-shadow: 0 4px 8px rgba(39, 11, 104, 0.728); /* Add shadow to form */
+}
+
+.booking-form select,
+.booking-form input {
+    padding: 10px; /* Add padding inside the select and input fields */
+    border: 1px solid #ccc; /* Light grey border for the inputs */
+    border-radius: 5px; /* Round the corners of the inputs */
+}
+
+.booking-form button {
+    background-color: #007BFF; /* Blue background for the button */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round the corners of the button */
+    padding: 10px 20px; /* Add padding inside the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.booking-form button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Hostel Options Cards Styling */
+.hostel-options {
+    display: flex; /* Use flexbox to align the cards in a row */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Space between the cards */
+    padding: 20px; /* Add padding around the cards */
+}
+
+.hostel-card {
+    background-color: rgba(122, 223, 40, 0.886); /* Light green background color with some transparency */
+    border-radius: 10px; /* Round the corners of the cards */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.621); /* Add shadow to the cards */
+    width: 200px; /* Fixed width for the cards */
+    padding: 15px; /* Add padding inside the cards */
+    text-align: center; /* Center text and elements inside the card */
+    cursor: pointer; /* Change cursor to pointer when hovering over the card */
+}
+
+.hostel-card img {
+    width: 200px; /* Set fixed width for the card images */
+    height: 170px; /* Set fixed height for the card images */
+    margin-bottom: 10px; /* Add space below the image */
+}
+
+.hostel-card h3 {
+    font-size: 18px; /* Set font size for card titles */
+    margin: 10px 0; /* Add space around the title */
+}
+
+.hostel-card p {
+    font-size: 14px; /* Set font size for card descriptions */
+    color: #666; /* Light grey color for the text */
+}
+
+/* Highlight selected hostel card */
+.hostel-card.selected {
+    border: 5px solid #007BFF; /* Blue border for the selected card */
+}

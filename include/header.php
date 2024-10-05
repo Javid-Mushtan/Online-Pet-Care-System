@@ -6,7 +6,7 @@
     <div class='off-screen-menu'>
         <ul>
             <a href='index.php'><li>Home</li></a>
-            <a href='grooming.php'><li>Services</li></a>
+            <a href='services_page.php'><li>Services</li></a>
             <a href='pharmacy.php'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
         </ul>
@@ -26,7 +26,7 @@
             <button type='submit' class='search-btn'><img src='assets/icons/search-icon.png'></button>
         </form>
 
-        <a href='".$_SESSION['profile_path']."'><img id='user_profile_picture' src='assets/images/profile_pictures/$profile_picture' alt='' width='80px' height='80px'></a>
+        <a href='".$_SESSION['profile_path']."'><img id='user_profile_picture' src='profile_pictures/users/$profile_picture' alt='' width='80px' height='80px'></a>
     </nav>
 </header>";
     } else {
@@ -35,7 +35,7 @@
     <div class='off-screen-menu'>
         <ul>
             <a href='index.php'><li>Home</li></a>
-            <a href='grooming.php'><li>Services</li></a>
+            <a href='services_page.php'><li>Services</li></a>
             <a href='pharmacy.php'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
         </ul>
@@ -56,7 +56,7 @@
         </form>
 
         <a href='login.php'><button class='login-signup-btn'>Login</button></a>
-        <a href='sign_up.php'><button class='login-signup-btn'>Sign up</button></a>
+        <a href='user_registration.php'><button class='login-signup-btn'>Sign up</button></a>
     </nav>
 </header>";
     }

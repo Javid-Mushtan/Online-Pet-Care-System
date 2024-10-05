@@ -39,7 +39,7 @@
                     <span>or</span>
                 </div>
         
-                <p>Don't have an account yet? <a href="sign_up.php">Sign up here</a></p>
+                <p>Don't have an account yet? <a href="user_registration.php">Sign up here</a></p>
             </div>
         </div>
     </div>

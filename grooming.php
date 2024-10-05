@@ -1,4 +1,24 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    require "process/connect_dbshop.php";
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $pet_id = $_POST['petName'];
+        $service = $_POST['service'];
+        $time = $_POST['time'];
+        $date = $_POST['date'];
+        $user_id = $_SESSION['userid'];
+
+        $add_appointment_query = "insert into appointment(customer_id, pet_id, service_id, service, appointment_date, appointment_time, status)
+                                  values($user_id, $pet_id, 500, '$service', '$date', '$time', 'pending')";
+
+        if (!$conn->query($add_appointment_query)) {
+            echo "Error: ".$conn->error;
+        }
+    }
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +30,6 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <!-- <header>
-        <div class="logo"><a href="indexnew.html">PetGo</a></div>
-    </header> -->
-
     <?php require 'include/header.php' ?>
 
     <div class="content">
@@ -21,7 +37,7 @@
         <section class="hero">
             <h1>Premium Pet Grooming Services</h1>
             <p>Expert care for your furry friend</p>
-            <button class="cta-btn" onclick="scrolldown()">Book a Grooming Session</button>
+            <button class="cta-btn" id="book-service-btn" onclick="scrolldown()">Book a Grooming Session</button>
         </section>
     
         <section class="services">
@@ -56,18 +72,38 @@
     
         <section class="booking" id="booking">
             <h2>Book Your Grooming Session</h2>
-            <form id="bookingForm">
-                <label for="ownerName">Owner's Name:</label>
-                <input type="text" id="ownerName" name="ownerName" required>
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                <!-- <label for="ownerName">Owner's Name:</label>
+                <input type="text" id="ownerName" name="ownerName" required> -->
     
                 <label for="petName">Pet's Name:</label>
-                <input type="text" id="petName" name="petName" required>
+                <!-- <input type="text" id="petName" name="petName" required> -->
+                <select name="petName" id="petName" required>
+                    <option value="null">Pet Name</option>
+                    <?php
+                        $userid = $_SESSION['userid'];
+                        $get_pets_query = "select name, pet_id from pet_data where owner_id=$userid";
+                        $results = $conn->query($get_pets_query);
+
+                        if ($results->num_rows > 0) {
+                            while($row = $results->fetch_assoc()) {
+                                $pet_name = $row['name'];
+                                $pet_id = $row['pet_id'];
+
+                    ?>
+                                <option value='<?php echo $pet_id ?>'><?php echo $pet_name ?></option>;
+
+                    <?php
+                            }
+                        }
+                    ?>
+                </select>
     
                 <label for="service">Select Service:</label>
                 <select id="service" name="service" required>
                     <option value="bath">Bath and Brush - Rs.1000</option>
                     <option value="haircut">Haircuts and Trims - Rs.2000</option>
-                    <option value="nail">Nail Clipping - Rs.3000</option>
+                    <option value="nail-trim">Nail Clipping - Rs.3000</option>
                     <option value="board">Pet Boarding Per Day - Rs.4500</option>
                 </select>
     

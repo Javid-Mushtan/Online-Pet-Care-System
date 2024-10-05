@@ -48,18 +48,17 @@
     <div class="content">
         <h1>Payment Portal</h1>
         
-        
-        <button class="accordion" onclick="getSavedCardInfo(1)">Pay with Credit/Debit Card</button>
+        <button class="accordion" onclick="getSavedCardInfo()">Pay with Credit/Debit Card</button>
         <div class="panel" id="card">
-            <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" id="card-form">
+            <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" id="card-form" class="payment-form">
                 <label for="card-number">Card Number</label><br>
-                <input type="text" name="card-number" id="card-number"><br>
+                <input type="text" name="card-number" id="card-number" placeholder="1234-5678-9012-3456" required><br>
 
                 <label for="exp-date">Expiry Date</label><br>
-                <input type="text" name="exp-date" id="exp-date"><br>
+                <input type="text" name="exp-date" id="exp-date" placeholder="mm/yy" required><br>
 
                 <label for="cvc">CVC</label><br>
-                <input type="text" name="cvc" id="cvc" min="100" max="999"><br>
+                <input type="password" name="cvc" id="cvc" pattern="[0-9]{3}" placeholder="123"><br>
 
                 <label for="name">Name on Card</label><br>
                 <input type="text" name="name" id="name"><br>
@@ -72,8 +71,8 @@
 
         <button class="accordion">Cash On Delivery</button>
         <div class="panel">
-            <button id="auto-fill">Auto Fill</button>
-            <form action="process/payment_portal/payment_portal.php?method=cod" method="POST">
+            <button class="address-autofill-btn" onclick="getAddressInfo()">Auto Fill</button>
+            <form action="process/payment_portal/payment_portal.php?method=cod" method="POST" id="card-form" id="card-form" class="payment-form">
                 <label for="full-name">Full Name</label><br>
                 <input type="text" name="full-name" id="full-name" required><br>
 
@@ -81,10 +80,9 @@
                 <input type="number" name="mobile-num" id="mobile-num" required><br>
 
                 <label for="address">Address</label><br>
-                <textarea name="address" id="address" rows="3" cols="30" required></textarea><br>
-
-                <label for="postal-code">Postal Code</label><br>
-                <input type="number" name="postal-code" id="postal-code" required><br>
+                <input type="text" name="street" id="street" placeholder="Street" required><br>
+                <input type="text" name="city" id="city" placeholder="City" required><br>
+                <input type="number" name="postal_code" id="postal-code" placeholder="Postal Code" required><br>
 
                 <input type="submit" value="Place Order">
             </form>

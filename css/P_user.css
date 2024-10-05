@@ -1,0 +1,118 @@
+
+
+
+/* Profile section styling */
+.profile-section {
+    margin-top: 20px; /* Space above profile section */
+    text-align: center; /* Center align content */
+}
+
+/* Profile image styling */
+.profile-section img {
+    width: 150px; /* Width for profile image */
+    height: 150px; /* Height for profile image */
+    border-radius: 50%; /* Circular profile image */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+/* Form styling */
+.user_form {
+    margin: 10px 0; /* Vertical margin for forms */
+    padding: 20px; /* Padding inside forms */
+    background: #f9f9f9; /* Light background for forms */
+    border: 1px solid #ddd; /* Light border for form */
+    border-radius: 8px; /* Rounded corners for form */
+
+    display: flex;
+}
+
+/* Horizontal layout for labels and inputs */
+.form-group {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center;  /* Center items vertically */
+    margin-bottom: 5px; /* Space below each form group */
+}
+
+/* Label styling */
+label {
+    width: 150px; /* Fixed width for labels */
+    text-align: left; /* Left align text in labels */
+}
+
+/* Input field styling */
+.user_form > input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    flex: 1; /* Allow input fields to grow */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    margin-right: 10px;
+}
+
+
+.C_pwd input[type="password"]{
+    width: 200px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 15px; /* Padding for buttons */
+    background-color: #28a745; /* Green background */
+    color: #fff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Centered small input for current password */
+#current_password {
+    width: auto; /* Auto width to fit the content */
+    text-align: center; /* Center the text in the input */
+    font-size: 12px; /* Smaller font size */
+    margin: 10px auto; /* Center the margin */
+}
+
+/* Styles for small buttons */
+#saveProfile,
+#savePassword {
+    display: none; /* Initially hide save buttons */
+}
+
+/* Styles for profile editing */
+input[disabled] {
+    background-color: #e9ecef; /* Light background for disabled inputs */
+}
+
+/* Footer styling */
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    /* Stack elements for smaller screens */
+    #main {
+        margin: 10px; /* Reduce margin on smaller screens */
+    }
+
+    .profile-section img {
+        width: 100px; /* Smaller image on mobile */
+        height: 100px; /* Smaller image on mobile */
+    }
+
+    button {
+        width: 100%; /* Full width for buttons on mobile */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"] {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
