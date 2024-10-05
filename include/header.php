@@ -9,6 +9,7 @@
             <a href='services_page.php'><li>Services</li></a>
             <a href='pharmacy.php'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
+            <a href='faq_page.php'><li>FAQ</li></a>
         </ul>
     </div>
 
@@ -38,6 +39,7 @@
             <a href='services_page.php'><li>Services</li></a>
             <a href='pharmacy.php'><li>Pharmacy</li></a>
             <a href='pet_store.php'><li>Pet Store</li></a>
+            <a href='faq_page.php'><li>FAQ</li></a>
         </ul>
     </div>
 

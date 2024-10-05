@@ -30,12 +30,15 @@ header {
 
 #user_profile_picture {
     border-radius: 50%;
+    margin-right: 150px;
 }
 
 nav {
     display: flex;
     padding: 10px;
     background-color: #295f98;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .hb_menu {
@@ -54,7 +57,7 @@ nav {
 }
 
 #logo {
-    margin-left: 50px;
+    margin-right: 100px;
     border-radius: 50%;
 }
 
@@ -83,18 +86,21 @@ nav form {
     padding: 0;
     background-color: white;
     border: 1px solid black;
-    width: 600px;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
 
 }
 
 nav input {
-    width: 540px;
+    width: 840px;
     height: 40px;
     font-size: 2rem;
     margin: 0;
     padding: 0;
     border: none;
     outline: none;
+    align-self: center;
 }
 
 /* ---------- Hamburger-Menu ---------*/

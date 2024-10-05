@@ -1,15 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
-    margin-top: 150px;
+    background-image: url(../../assets/images/petstore_background.jpg);
 }
+
+
 
 .content {
     padding: 20px;
+    margin-top: 150px;
 }
 
 .product-card {
@@ -23,6 +21,7 @@ body {
     padding: 15px;
     margin: 50px 20px;
     transition: 0.5s ease;
+    background-color: whitesmoke;
 }
 
 .product-link {

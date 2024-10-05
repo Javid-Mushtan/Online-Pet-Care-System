@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/side_menubar.css">
     <link rel="stylesheet" href="css/pet_store/product_page.css">
     <script src="js/side_menubar.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -73,8 +72,8 @@
                                     <p class="product-price">Rs.<?php echo $product_price?></p>
                                 </div>
                             </a>
-                                <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>
-                            </div>  
+                            <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>
+                        </div>  
                         
     <?php
                     }

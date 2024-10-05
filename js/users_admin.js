@@ -1,3 +1,5 @@
+var user_id;
+
 function enableEdit() {
     let input_fields = document.querySelectorAll(".editable")
     input_fields.forEach(field => {
@@ -20,6 +22,9 @@ document.getElementById("search-form").addEventListener("submit", function (e) {
     .then(data => {
         if (data.status == "success") {
             console.log(data)
+
+            user_id = data.userid
+
             document.getElementById("user_account_type").value = data.account_type
             document.getElementById("fname").value = data.fname
             document.getElementById("lname").value = data.lname
@@ -36,7 +41,7 @@ document.getElementById("search-form").addEventListener("submit", function (e) {
             }
 
             document.getElementById("user-info-form").action = "users_admin.php?action=edit&type=" + data.account_type + "&id=" + data.userid
-            document.getElementById("delete-btn").formAction = "users_admin.php?action=delete&type=" + data.account_type + "&id="+data.userid
+            document.getElementById("delete-link").href = "users_admin.php?action=delete&type=" + data.account_type + "&id=" + data.userid
 
             document.getElementById("edit-btn").disabled = false
             document.getElementById("delete-btn").disabled = false

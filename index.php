@@ -68,6 +68,7 @@
         </blockquote>
     </section>
 </div>
+    <?php require 'include/footer.php' ?>
     <!-- <script src="indexnew.js"></script> -->
 </body>
 </html>

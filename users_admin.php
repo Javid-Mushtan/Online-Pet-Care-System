@@ -17,7 +17,7 @@
                         die("Image Upload failed");
                     }
 
-                    $update_img = "update user_data set user_image_path=$new_image where user_id=$id";
+                    $update_img = "update user_data set user_image_path='$new_image' where user_id=$id";
                     $conn->query($update_img);
 
                     break;
@@ -61,18 +61,6 @@
 
                     $conn->query($update_user_data);
                     $conn->query($update_user_phone);
-
-                    break;
-
-                case 'delete':
-                    $delete_query = "";
-                    if ($type == "customer") {
-                        $delete_query = "delete from user_data where user_id=$id";
-                    } else {
-                        $delete_query = "delete from employee where user_id=$id";
-                    }
-
-                    $conn->query($delete_query);
 
                     break;
             }
@@ -123,6 +111,24 @@
         }
         
     }
+
+    if ($_SERVER['REQUEST_METHOD'] == "GET" ) {
+        if (isset($_GET['action'])) {
+            $type = $_GET['type'];
+            $id = $_GET['id'];
+
+            $delete_query = "";
+            if ($type == "customer") {
+                $delete_query = "delete from user_data where user_id=$id";
+            } else {
+                $delete_query = "delete from employee where emp_id=$id";
+            }
+
+            if(!$conn->query($delete_query)) {
+                die("Account deletion failed");
+            };
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -145,7 +151,7 @@
                 <a href="dashboard.php" class="btn active">Dashboard</a>
                 <a href="users_admin.php" class="btn">Users</a>
                 <a href="appointments.php" class="btn">Appointments</a>
-                <a href="#order" class="btn">Services</a>
+                <a href="services_admin.php" class="btn">Services</a>
                 <button id="log-out-btn"><a href="process/log_out.php">Log out</a></button>
             </div>
             
@@ -169,7 +175,7 @@
                     </div>
                 </form>
 
-                <form action="" method="POST" id="user-image-form" hidden>
+                <form action="" method="POST" id="user-image-form" enctype="multipart/form-data" hidden>
                     <div id="profile-pic-container">
                         <img id="user-profile-pic"><br>
                         <input type="file" name="new-profile-pic" id="new-profile-pic">
@@ -206,7 +212,7 @@
 
                 <div id="action-btn">
                     <button id="edit-btn" onclick="enableEdit()" disabled>Edit</button>
-                    <button type="submit" formaction="" formmethod="POST" id="delete-btn" disabled>Delete</button>
+                    <a href="" id="delete-link"><button id="delete-btn" onclick="confirm('Do you want to delete this account?')" disabled>Delete</button></a>
                 </div>
 
             </div>

@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Care Pharmacy</title>
     <link rel="stylesheet" href="css/pharmacy.css">
+    <link rel="stylesheet" href="css/pet_store/product_page.css">
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/main.js" defer></script>
@@ -18,7 +19,7 @@
 
     <?php require 'include/header.php'; ?>
 
-    <div class="container">
+    <div class="content">
         <section class="header-pharmacy">
             <h1>Pet Care Pharmacy</h1>
         </section>
@@ -28,20 +29,38 @@
                     $get_products_data = "select * from product_data where product_type='medicine'";
                     $results = $conn->query($get_products_data);
 
+                    function createRatingString($rating) {
+                        $string = "";
+                        for ($i = 0; $i < $rating; $i++) {
+                            $string .= "⭐";
+                        }
+            
+                        return $string;
+                    }
+
                     if ($results->num_rows > 0) {
                         while ($row = $results->fetch_assoc()) {
-                            $id = $row['product_id'];
-                            $image_path = $row['product_image_path'];
-                            $price = $row['product_price'];
-                            $name = $row['product_name'];
+                            $product_id = $row['product_id'];
+                            $product_image = $row['product_image_path'];
+                            $product_price = $row['product_price'];
+                            $product_name = $row['product_name'];
+                            $product_rating = $row['product_rating'];
+
+                            $rating_y = (int)$product_rating;
+                            $rating_b = 5 - (int)$product_rating;
 
                 ?>
-                        <div class="product">
-                            <img src="assets/images/product_images/<?php echo $image_path ?>" alt="Item <?php echo $id ?>">
-                            <h2><?php echo $name ?></h2>
-                            <p>Price: Rs.<?php echo $price ?></p>
-                            <button onclick="addToCart(<?php echo $id ?>)">Add to Cart</button>
-                        </div>
+                        <div class="product-card">
+                            <a href="product" class="product-link">
+                                <img src="assets/images/product_images/<?php echo $product_image?>" alt="" class="product-image">
+                                <div class="product-info">
+                                    <h2 class="product-name"><?php echo $product_name?></h2>
+                                    <span class="product-rating"><span class="rating-yellow"><?php echo createRatingString($rating_y)?></span></span>
+                                    <p class="product-price">Rs.<?php echo $product_price?></p>
+                                </div>
+                            </a>
+                            <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>
+                        </div>  
                 <?php
                         }
                     } else {

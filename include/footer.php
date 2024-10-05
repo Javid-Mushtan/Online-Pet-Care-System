@@ -4,6 +4,6 @@
             <p class="company-name">PetLife Co pvt ltd 🐾</p>
         </div>
         <p class="cpyright">Copyright &copy; 2024</p>
-        <a href="#contactus">Contact Us</a>
-        <a href="#aboutus">About Us</a>
+        <a href="contact_us.php">Contact Us</a>
+        <a href="about_us.php">About Us</a>
 </footer>
