@@ -19,6 +19,7 @@
         <a href="grooming.php">Grooming</a>
         <a href="pet_hostel.php">Pet Hostel</a>
         <a href="vet_booking.php">Vet booking</a>
+        <a href="dog_walking.php">Dog Walking</a>
     </div>
     <?php require 'include/footer.php' ?>
 </body>

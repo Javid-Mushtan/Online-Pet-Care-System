@@ -28,12 +28,13 @@
                 $_SESSION['loggedin'] = true;
                 if ($user_type == 'customer') {
                     $_SESSION['userid'] = $row['user_id'];
+                    $_SESSION['profile_picture'] = $row['user_image_path'];
                 } else if ($user_type == 'employee') {
                     $_SESSION['userid'] = $row['emp_id'];
+                    $_SESSION['profile_picture'] = "employee.jpg";
                 }
 
                 $_SESSION['role'] = $row['role'];
-                $_SESSION['profile_picture'] = $row['user_image_path'];
 
                 
                 header("Location: ../index.php");

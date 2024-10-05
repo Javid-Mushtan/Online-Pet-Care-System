@@ -40,6 +40,7 @@
             border: 1px solid black;
             border-radius: 5px;
             margin: 10px 0;
+            background-color: white;
 
         }
 
@@ -79,7 +80,7 @@
             <a href="my_pets.php" class="btn">My Pets</a>
             <a href="my_appointments.php" class="btn">My Appointments</a>
             <a href="my_cart.php" class="btn">My Cart</a>
-            <a href="process/log_out.php"><button id="log-out-btn">Log out</button></a>
+            <button id="log-out-btn"><a href="process/log_out.php">Log out</a></button>
         </div>
 
         <div class="profile-content">

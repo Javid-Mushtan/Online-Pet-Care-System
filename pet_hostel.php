@@ -6,7 +6,7 @@
     session_start();
 
 if (!isset($_SESSION['userid'])) {
-    die("Error: You must be logged in to access this page.");
+    header("Location: login.php");
 }
 
 require "process/connect_dbshop.php";

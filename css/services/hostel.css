@@ -1,3 +1,7 @@
+body {
+    background-image: url("../../assets/images/services/pet_hostel.jpg");
+}
+
 /* Title Section Styling */
 .title-section {
     text-align: center; /* Center the title text */

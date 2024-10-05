@@ -2,6 +2,10 @@
     session_start(); 
     require "process/connect_dbshop.php";
 
+    if (!isset($_SESSION['userid'])) {
+        header("Location: login.php");
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $pet_id = $_POST['petName'];
         $service = $_POST['service'];
@@ -28,6 +32,9 @@
     <title>Pet Grooming Services</title>
     <link rel="stylesheet" href="css/services/grooming.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/services/groomingadd.js" defer></script>
 </head>
 <body>
     <?php require 'include/header.php' ?>
@@ -121,7 +128,6 @@
 
     <?php require 'include/footer.php' ?>
 
-    <script src="js/main.js"></script>
-    <script src="js/services/groomingadd.js"></script>
+    
 </body>
 </html>

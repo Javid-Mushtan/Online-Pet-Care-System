@@ -8,7 +8,7 @@ session_start(); // Start the session
 
 // Check if the user is logged in by checking if 'user_id' exists in the session
 if (!isset($_SESSION['userid'])) {
-    die("Error: You must be logged in to access this page."); // If not logged in, display an error message
+    header("Location: login.php");
 }
 
 require "process/connect_dbshop.php";
@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['appointment_time'])) {
     $appointment_time = $_POST['appointment_time'];
 
     // Prepare the SQL statement
-    $insert_query = "INSERT INTO Appointment (customer_id, vet_id, pet_id, service_id, appointment_date, appointment_time, postal_code)
-                     VALUES ('$user_id', '$vet_id', '$pet_id', '$service_id', '$appointment_date', '$appointment_time', '$user_postal_code')";
+    $insert_query = "INSERT INTO Appointment (customer_id, vet_id, pet_id, service_id, service, appointment_date, appointment_time, postal_code, status)
+                     VALUES ($user_id, $vet_id, $pet_id, $service_id, 'Veterinary care', '$appointment_date', '$appointment_time', $user_postal_code, 'pending')";
 
     // Execute the query and check for errors
     if ($conn->query($insert_query)) {
