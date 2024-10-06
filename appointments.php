@@ -95,6 +95,7 @@
             border: none;
             border-radius: 10px;
             padding: 10px 15px;
+            color: white;
         }
 
         .resch-btn {
@@ -108,6 +109,7 @@
             color: white;
             padding: 10px 15px;
             border-radius: 10px;
+            margin-left: 60%;
         }
     </style>
 
@@ -131,6 +133,10 @@
                 <p>App id</p>
                 <p>Service</p>
                 <p>Date</p>
+                <p>Time</p>
+                <p>Checkin Date</p>
+                <p>Checkout Date</p>
+                <p>Service Freq</p>
                 <p>Customer name</p>
                 <p>Pet Name</p>
             </div>
@@ -139,7 +145,7 @@
                 <div class="appointment">
                 <?php
                     $query = "select a.appointment_id, s.service_type, a.appointment_date, u.first_name,
-                              p.name 
+                              p.name, a.service_freq, a.checkin_date, a.checkout_date, a.appointment_time, a.service_id
                               from appointment a, services s, user_data u, pet_data p
                               where a.service_id=s.service_id and a.customer_id=u.user_id and a.pet_id=p.pet_id
                               and a.status='pending'";
@@ -150,15 +156,26 @@
                         while ($row = $results->fetch_assoc()) {
                             $app_id = $row['appointment_id'];
                             $service_type = $row['service_type'];
-                            $app_date = $row['appointment_date'];
+                            $app_date = $row['appointment_date'] == "0000-00-00" ? "-------N/A-------" : $row['appointment_date'];
                             $first_name = $row['first_name'];
                             $pet_name = $row['name'];
+
+                            $checkin_date = isset($row['checkin_date']) ? $row['checkin_date'] : "-------N/A-------";
+                            $checkout_date = isset($row['checkout_date']) ? $row['checkout_date'] : "-------N/A-------";
+
+                            $service_freq = isset($row['service_freq']) ? $row['service_freq'] : "-------N/A-------";
+
+                            $time = isset($row['appointment_time']) ? $row['appointment_time'] : "-------N/A-------";
 
                             $element = "<div class='app-card'>
                             <div class='app-info'>
                                 <p>$app_id</p>
                                 <p>$service_type</p>
                                 <p>$app_date</p>
+                                <p>$time</p>
+                                <p>$checkin_date</p>
+                                <p>$checkout_date</p>
+                                <p>$service_freq</p>
                                 <p>$first_name</p>
                                 <p>$pet_name</p>
                             </div>
@@ -182,6 +199,10 @@
                 <p>App id</p>
                 <p>Service</p>
                 <p>Date</p>
+                <p>Time</p>
+                <p>Checkin Date</p>
+                <p>Checkout Date</p>
+                <p>Service Freq</p>
                 <p>Customer name</p>
                 <p>Pet Name</p>
             </div>
@@ -201,21 +222,31 @@
                         while ($row = $results->fetch_assoc()) {
                             $app_id = $row['appointment_id'];
                             $service_type = $row['service_type'];
-                            $app_date = $row['appointment_date'];
+                            $app_date = $row['appointment_date'] == "0000-00-00" ? "-------N/A-------" : $row['appointment_date'];
                             $first_name = $row['first_name'];
                             $pet_name = $row['name'];
+
+                            $checkin_date = isset($row['checkin_date']) ? $row['checkin_date'] : "-------N/A-------";
+                            $checkout_date = isset($row['checkout_date']) ? $row['checkout_date'] : "-------N/A-------";
+
+                            $service_freq = isset($row['service_freq']) ? $row['service_freq'] : "-------N/A-------";
+
+                            $time = isset($row['appointment_time']) ? $row['appointment_time'] : "-------N/A-------";
 
                             $element = "<div class='app-card'>
                             <div class='app-info'>
                                 <p>$app_id</p>
                                 <p>$service_type</p>
                                 <p>$app_date</p>
+                                <p>$time</p>
+                                <p>$checkin_date</p>
+                                <p>$checkout_date</p>
+                                <p>$service_freq</p>
                                 <p>$first_name</p>
                                 <p>$pet_name</p>
                             </div>
                             <div class='app-btn'>
                                 <a href='".$_SERVER['PHP_SELF']."?action=remove&id=$app_id'><button class='remove-btn'>Remove</button></a>
-                                <button class='resch-btn'>Re-Schedule</button>
                             </div>
                         </div>";
 

@@ -26,6 +26,7 @@ while ($row = $result->fetch_assoc()) {
 $walkers = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['postalCode'])) {
     $postalCode = intval($_POST['postalCode']);
+    $_SESSION['pet_selected'] = $_POST['pet'];
     
     // Query to fetch employees who provide walking services and match the postal code
     $query = "SELECT emp_id, first_name, last_name, 'default.jpg' AS image, 10 AS reviews, 1700 AS rate 
@@ -48,14 +49,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bookAppointment'])) {
     $postalCode = intval($_POST['postalCode']); // Get postal code from the form
     $serviceId = 501; // Set the service ID to 501
     $serviceFreq = $_POST['service_freq']; // Get service frequency from the form
+    $pet_id_s = isset($_POST['pet']) ? $_POST['pet'] : "";
 
     // Check if service frequency is selected
     if (empty($serviceFreq)) {
         $message = "Please select a service frequency.";
     } else {
         // Insert the appointment into the database
-        $query = "INSERT INTO appointment (customer_id, service_id, service, appointment_date, appointment_time, postal_code, service_freq, status)
-                  VALUES ($customerId, $serviceId, 'walk', '$appointmentDate', '$appointmentTime', $postalCode, '$serviceFreq', 'pending')";
+        $query = "INSERT INTO appointment (customer_id, pet_id, service_id, service, appointment_date, appointment_time, postal_code, service_freq, status)
+                  VALUES ($customerId,$pet_id_s, $serviceId, 'walk', '$appointmentDate', '$appointmentTime', $postalCode, '$serviceFreq', 'pending')";
 
         if ($conn->query($query) === TRUE) {
             $message = "Appointment booked successfully!";
@@ -147,6 +149,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : '';
                             <input type="hidden" name="postalCode" value="<?php echo $_POST['postalCode']; ?>"> <!-- Include postal code -->
                             <input type="hidden" name="service_freq" id="selectedServiceFreq" value=""> <!-- Will hold selected service frequency -->
                             <input type="hidden" name="bookAppointment" value="1">
+                            <input type="hidden" name="pet" value="<?php echo $_SESSION['pet_selected'] ?>">
                             <button type="submit" class="book-button" id="bookButton" disabled>Book</button>
                         </form>
                     </div>

@@ -43,6 +43,7 @@
             border-radius: 5px;
             margin: 10px 0;
             background-color: white;
+            font-size: 18px;
 
         }
 
@@ -67,8 +68,20 @@
         }
 
         .app-btn {
-            margin-left: 80%;
+            margin-left: 90%;
             margin-bottom: 10px;
+        }
+        
+        .cancel-btn {
+            padding: 10px 15px;
+            background-color: #D91656;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .cancel-btn:hover {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -96,12 +109,19 @@
 
                 if ($results->num_rows > 0) {
                     while($row = $results->fetch_assoc()) {
+                        $service_id = $row['service_id'];
                         $app_id = $row['appointment_id'];
                         $pet_id = $row['pet_id'];
-                        $date = $row['appointment_date'];
+                        $app_date = $row['appointment_date'];
                         $time = $row['appointment_time'];
                         $service = $row['service'];
                         $status = $row['status'];
+
+                        $checkin_date = isset($row['checkin_date']) ? $row['checkin_date'] : "";
+                        $checkout_date = isset($row['checkout_date']) ? $row['checkout_date'] : "";
+
+                        $service_freq = isset($row['service_freq']) ? $row['service_freq'] : "";
+
 
                         $get_pet_name_query = "select name from pet_data where pet_id='$pet_id'";
                         $pet_name_result = $conn->query($get_pet_name_query);
@@ -113,22 +133,51 @@
                         <div class="app-card">
                             <div class="app-header">
                                 <p>Pet Name</p>
-                                <p>Date</p>
-                                <p>Time</p>
+                                
+                                <?php
+                                    if ($service_id == 502) {
+                                        echo "<p>Checkin date</p>";
+                                        echo "<p>Checkout date</p>";
+                                    } else {
+                                        echo "<p>Date</p>";
+                                        echo "<p>Time</p>";
+                                    }
+                                ?>
                                 <p>Service</p>
+                                 
+                                <?php
+                                    if ($service_id == 501) {
+                                        echo "<p>Service Frequency</p>";
+                                    }
+                                ?>
+
                                 <p>Status</p>
                             </div>
                             <div class="app-info">
                                 <p><?php echo $pet_name ?></p>
-                                <p><?php echo $date ?></p>
-                                <p><?php echo $time ?></p>
+                                <?php
+                                    if ($service_id == 502) {
+                                        echo "<p>$checkin_date</p>";
+                                        echo "<p>$checkout_date</p>";
+                                    } else {
+                                        echo "<p>$app_date</p>";
+                                        echo "<p>$time</p>";
+                                    }
+                                ?>
                                 <p><?php echo $service ?></p>
+
+                                <?php
+                                    if ($service_id == 501) {
+                                        echo "<p>$service_freq</p>";
+                                    }
+                                ?>
+
                                 <p><?php echo $status ?></p>
                             </div>
 
                             <div class="app-btn">
                                 <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>?action=cancel&id=<?php echo $app_id ?>"><button class="cancel-btn">Cancel</button></a>
-                                <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>?action=reschedule&id=<?php echo $app_id ?>"><button class="resh-btn">Re-Schedule</button></a>
+                                <!-- <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>?action=reschedule&id=<?php echo $app_id ?>"><button class="resh-btn">Re-Schedule</button></a> -->
                             </div>
                         </div>
                 <?php
