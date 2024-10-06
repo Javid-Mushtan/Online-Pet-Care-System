@@ -32,7 +32,9 @@
     <link rel="stylesheet" href="css/profile_menu.css">
     <script src="js/main.js" defer></script>
     <script src="js/admin_panel/appointment.js" defer></script>
-    <title>Admin Panel</title>
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
+    <title>Appointments</title>
 
     <style>
         .profile-content {
@@ -46,13 +48,17 @@
             border: 5px solid black;
             overflow-y: scroll;
             overflow-x: hidden;
+            background-color: white;
         }
+
+       
 
         .info-header {
             display: flex;
-            width: 100%;
+            width: 80%;
             justify-content: space-between;
-            border-bottom: 1px solid black;
+            font-weight: bold;
+
         }
 
         .app-info {
@@ -93,11 +99,15 @@
 
         .resch-btn {
             background-color: red;
+            padding: 10px 15px;
+            border-radius: 10px;
         }
 
         .remove-btn {
             background-color: black;
             color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
         }
     </style>
 
@@ -117,6 +127,13 @@
         
         <div class="profile-content">
             <h1>Pending</h1>
+            <div class="info-header">
+                <p>App id</p>
+                <p>Service</p>
+                <p>Date</p>
+                <p>Customer name</p>
+                <p>Pet Name</p>
+            </div>
             <div class="appointments">
                 
                 <div class="appointment">
@@ -140,7 +157,7 @@
                             $element = "<div class='app-card'>
                             <div class='app-info'>
                                 <p>$app_id</p>
-                                <p><$service_type</p>
+                                <p>$service_type</p>
                                 <p>$app_date</p>
                                 <p>$first_name</p>
                                 <p>$pet_name</p>
@@ -161,6 +178,13 @@
                 </div>
             </div>
             <h1>Approved</h1>
+            <div class="info-header">
+                <p>App id</p>
+                <p>Service</p>
+                <p>Date</p>
+                <p>Customer name</p>
+                <p>Pet Name</p>
+            </div>
             <div class="appointments">
                 
                 <div class="appointment">
@@ -184,7 +208,7 @@
                             $element = "<div class='app-card'>
                             <div class='app-info'>
                                 <p>$app_id</p>
-                                <p><$service_type</p>
+                                <p>$service_type</p>
                                 <p>$app_date</p>
                                 <p>$first_name</p>
                                 <p>$pet_name</p>

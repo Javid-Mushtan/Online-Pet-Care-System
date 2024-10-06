@@ -11,7 +11,7 @@
 
     <script src="js/main.js" defer></script>
     <script src="js/profile_router.js" defer></script>
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <?php require 'include/header.php' ?>
@@ -50,26 +50,32 @@
                 <h2>Today</h2>
                 <h2>Last week</h2>
             </div>
-    <div class="grid-item-3 item">
-        <h1>Appointments</h1>
-        <div class="data">
-            <div id="bar">
-                <div id="app-progress"></div>
-            </div>
-            <div class="text">
-                <h3>Currently working</h3>
-                <p>2</p>
-                <h3>Total finished</h3>
-                <p>8</p>
-                <h3>Total work for today</h3>
-                <p>10</p>
+            <div class="grid-item-3 item">
+                <h1>Appointments</h1>
+                <div class="data">
+                    <div id="bar">
+                        <div id="app-progress"></div>
+                    </div>
+                    <div class="text">
+                        <h3>Currently working</h3>
+                        <p>2</p>
+                        <h3>Total finished</h3>
+                        <p>8</p>
+                        <h3>Total work for today</h3>
+                        <p>10</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    <?php if ($_SESSION['role'] == "manager") {
+    ?>
+        <a href="process/generate_report.php"><button id="gen-report-btn">Generate Report</button></a>
+    <?php
+    } ?>
 </div>
 
 <script>
-
+    // Credit: https://youtu.be/n8uCt1TSGKE
     const lineData = [100, 200, 150, 50, 250, 350, 180]
     
     const canvas = document.getElementById("revenue-chart")

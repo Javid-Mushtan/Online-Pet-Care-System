@@ -77,7 +77,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Panel - Pet Care Services</title>
+    <title>Services</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/profile_menu.css">
     <link rel="stylesheet" href="css/services_admin.css">

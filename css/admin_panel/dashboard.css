@@ -72,3 +72,21 @@
     background-color: green;
     align-self: flex-end;
 }
+
+#gen-report-btn {
+    margin-top: 50px;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #257180;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+#gen-report-btn:hover {
+    cursor: pointer;
+    scale:1.01;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
