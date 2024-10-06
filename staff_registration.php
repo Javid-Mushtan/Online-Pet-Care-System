@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'process/connect_dbshop.php';
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -10,10 +11,10 @@
         $street = $_POST['street'];
         $city = $_POST['city'];
         $postal_code = $_POST['postal_code'];
-        $profile_picture = basename($_FILES['profile_pic']['name']);
-        $target_dir = "profile_pictures/users/".$profile_picture;
-
-        $check_user_query = "select user_id from user_data where email='$email'";
+        $service_provided = $_POST['service-provided'];
+        $role = $_POST['role'];
+        
+        $check_user_query = "select emp_id from employee where email='$email'";
         $results = $conn->query($check_user_query);
 
         $error_message = "";
@@ -21,31 +22,25 @@
         if ($results->num_rows > 0) {
             $error_message = "Account already exists. Try login.";
         } else {
-            if (!move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target_dir)) {
-                die("Image upload failed.");
-            }
-    
-            $add_user_query = "insert into user_data(first_name, last_name, city, street, postal_code, email, password, user_image_path, purchase_freq, role) 
-                               values('$fname', '$lname', '$city', '$street', '$postal_code', '$email', '$password', '$profile_picture', 0, 'customer')";
-    
+            $add_user_query = "insert into employee(first_name, last_name, city, street, postal_code, email, password, service_provided, role) 
+                               values('$fname', '$lname', '$city', '$street', '$postal_code', '$email', '$password', '$service_provided','$role')";
+
             $conn->query($add_user_query);
 
-
             // credit: https://stackoverflow.com/questions/3422168/safest-way-to-get-last-record-id-from-a-table
-            $get_prev_id = "select max(user_id) from user_data";
+            $get_prev_id = "select max(emp_id) from employee";
             //--------------------------------------------------------------------------------------------------
             $prev_id = $conn->query($get_prev_id);
 
             if ($prev_id->num_rows > 0) {
                 $row = $prev_id->fetch_assoc();
-                $id = $row['max(user_id)'];
-                $add_phone_num = "insert into user_phone(emp_id, phone_num) values($id, '$phone_number')";
+                $id = $row['max(emp_id)'];
+                $add_phone_num = "insert into employee_phone(emp_id, phone_num) values($id, '$phone_number')";
 
                 $conn->query($add_phone_num);
             }
 
-
-            header("Location: user_profile.php");
+            header("Location: users_admin.php");
             exit;
 
         }
@@ -76,6 +71,7 @@
             flex-direction: column;
             padding: 30px 30px;
             margin: 150px auto;
+            background-color: white;
 
         }
 
@@ -86,6 +82,11 @@
         #reg-form > input[type="text"], input[type="email"], input[type="password"] {
             width: 100%;
             font-size:1.5rem;
+            padding: 5px;
+        }
+
+        #reg-form select {
+            font-size: 1.5rem;
             padding: 5px;
         }
 
@@ -126,7 +127,17 @@
 
     <div class="content">
 
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" id="reg-form" enctype="multipart/form-data">
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" id="reg-form">
+            <label for="role">Role</label>
+            <select name="role" id="role" required>
+                <option value="staff">Staff</option>
+                <option value="admin">Admin</option>
+                <option value="manager">Manager</option>
+            </select><br>
+
+            <label for="service-provided">Service Provided</label>
+            <input type="text" name="service-provided" id="service-provided" required><br>
+
             <label for="fname">First Name</label>
             <input type="text" name="fname" id="fname" required><br>
 
@@ -152,11 +163,7 @@
             <input type="text" name="street" id="street" placeholder="Street" required><br>
             <input type="text" name="city" id="city" placeholder="City" required><br>
             <input type="text" name="postal_code" id="postal_code" placeholder="Postal Code" required><br>
-
-            <div>
-                <label for="profile_pic">Profile Picture</label><br><br>
-                <input type="file" name="profile_pic" id="profile_pic">
-            </div>
+            
             <br><br>
             <div>
                 <input type="checkbox" name="terms" id="terms"> 
@@ -164,7 +171,7 @@
             </div>
 
 
-            <button type="submit" id="submit-btn">Sign Up</button>
+            <button type="submit" id="submit-btn">Add Account</button>
         </form>
     </div>
 
@@ -200,19 +207,19 @@
             console.log(cpassword)
         }
 
-        function test() {
-            document.getElementById("fname").value = "test";
-            document.getElementById("lname").value = "test";
-            document.getElementById("pnumber").value = "0707181470";
-            document.getElementById("email").value = "test1234@gmail.com";
-            document.getElementById("password").value = "test1234";
-            document.getElementById("c-password").value = "test1234";
-            document.getElementById("street").value = "test";
-            document.getElementById("city").value = "test";
-            document.getElementById("postal_code").value = "12345";
-        }
+        // function test() {
+        //     document.getElementById("fname").value = "test";
+        //     document.getElementById("lname").value = "test";
+        //     document.getElementById("pnumber").value = "0707181470";
+        //     document.getElementById("email").value = "test1234@gmail.com";
+        //     document.getElementById("password").value = "test1234";
+        //     document.getElementById("c-password").value = "test1234";
+        //     document.getElementById("street").value = "test";
+        //     document.getElementById("city").value = "test";
+        //     document.getElementById("postal_code").value = "12345";
+        // }
 
-        test();
+        // test();
     </script>
     <?php require 'include/footer.php' ?>
 </body>

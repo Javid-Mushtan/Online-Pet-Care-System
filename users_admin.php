@@ -215,6 +215,8 @@
                 <div id="action-btn">
                     <button id="edit-btn" onclick="enableEdit()" disabled>Edit</button>
                     <a href="" id="delete-link"><button id="delete-btn" onclick="confirm('Do you want to delete this account?')" disabled>Delete</button></a>
+                    <a href="staff_registration.php"><button id="add-user-btn" onclick=" return confirm('Do you want to add a new account?')">Add User</button></a>
+
                 </div>
 
             </div>

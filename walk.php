@@ -18,6 +18,12 @@
 
 
     <script src="js/main.js" defer></script>
+
+    <style>
+        .content {
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
     

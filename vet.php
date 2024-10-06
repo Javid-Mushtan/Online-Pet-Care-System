@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['appointment_time'])) {
     // Execute the query and check for errors
     if ($conn->query($insert_query)) {
         // Redirect to the same page to prevent form resubmission
-        header("Location: vet_booking.php");
+        header("Location: vet.php");
         exit();
     } else {
         // Log the error and display a message
@@ -72,6 +72,12 @@ $service_rate = $service_data['service_rate'];
 
     <script src="js/main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .content {
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
 

@@ -44,7 +44,7 @@ select, option {
     margin-left: 15px;
 }
 
-#edit-btn, #delete-btn {
+#edit-btn, #delete-btn, #add-user-btn {
     padding: 10px 15px;
     margin: 10px 0;
     border: none;
@@ -58,6 +58,10 @@ select, option {
     margin-left: 15px;
 }
 
+#add-user-btn {
+    background-color: #FF6500;
+    margin-left: 15px;
+}
 
 #edit-btn {
     background-color: #664343;
