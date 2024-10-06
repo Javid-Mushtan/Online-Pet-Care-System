@@ -42,43 +42,15 @@ $pname_result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="profile_menu.css">
     <link rel="stylesheet" href="css/user_profile/main.css">
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
 
     <script src="js/main.js" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
 </head>
 <body>
-    <!-- Top Bar -->
-    <!-- <div class="topbar">
-        <span class="top-menu" onclick="openNav()">&#9776;</span>
-        <div class="logo">
-            <img src="https://static.vecteezy.com/system/resources/previews/000/467/567/original/pet-shop-logo-vector.jpg" alt="PetLife Co Logo">
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search..">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
-        <img src="https://ehonami.blob.core.windows.net/media/2018/07/7-ways-dog-owners-healthier-live-longer.jpg" alt="User Profile" class="user-icon">
-    </div> -->
-
-    <!-- Side Navigation -->
-    <!-- <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="side-list">
-            <a href="My Profile.php">My Account</a>
-            <a href="My pets.php">My Pets</a>
-            <a href="#">My Appointments</a>
-            <a href="#">My Cart</a>
-            <a href="Book pet hostel.php">hostel</a>
-            <a href="sign up.php">sign up</a>
-            <a href="Book vet appointment.php">vet</a>
-            <a href="test_vet.php"> vet test </a>
-        </div>
-        <div class="log-out-button">
-            <button>Log Out</button>
-        </div>
-    </div> -->
-
+   
     <?php require 'include/header.php' ?>
 
     <div class="grid-container">

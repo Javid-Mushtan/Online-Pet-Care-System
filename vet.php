@@ -67,6 +67,8 @@ $service_rate = $service_data['service_rate'];
     <title>Veterinary Booking</title>
     <link rel="stylesheet" href="css/services/vet.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
 
     <script src="js/main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">

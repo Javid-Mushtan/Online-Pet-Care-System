@@ -7,32 +7,15 @@
 <head>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/main.css">
-    
-    <title>Pet Care</title>
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
+    <title>Pet Life</title>
     <!-- <script src="newjs.js" defer></script> -->
     <script src="js/index.js" defer></script>
     <script src="js/main.js" defer></script>
 </head>
 <body>
-    <!-- <div class="navbar">
-        <div class="dropdown">
-            <input type="button" onclick="toggleDropdown()" id="drop" value="Services">
-            <div id="myDropdown" class="dropdown-content" style="display: none;">
-                <a href="#service1">Grooming</a>
-                <a href="#service2">Training</a>
-                <a href="#service3">Pet Sitting</a>
-            </div>
-        </div>
-
-        <form action="search.php" method="get" class="search-form">
-            <input type="text" name="search" class="search" placeholder="Search...">
-            <input type="submit" name="sb" class="sbutton" value="Search">
-        </form>
-
-        <a href="#signup" class="signin">Sign Up</a>
-        <a href="#signin" class="signup">Sign In</a>
-    </div> -->
-
+    
     <?php require 'include/header.php' ?>
 
 <div class="content">

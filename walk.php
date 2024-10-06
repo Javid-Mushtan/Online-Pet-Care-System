@@ -14,6 +14,8 @@
     <title>Dog Walking Booking Page</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/services/dog_walking.css">
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
 
     <script src="js/main.js" defer></script>
 </head>

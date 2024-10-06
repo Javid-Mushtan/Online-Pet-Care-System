@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="css/payment_portal/main.css">
     <script src="js/main.js" defer></script>
     <script src="js/payment_portal/main.js" defer></script>
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
     <title>Check Out</title>
 </head>
 <body>

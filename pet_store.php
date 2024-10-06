@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/pet_store/main.css">
     <script src="js/main.js" defer></script>
     <script src="js/pet_store/main.js" defer></script>
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
     <title>Pet Store</title>
 </head>
 <body>

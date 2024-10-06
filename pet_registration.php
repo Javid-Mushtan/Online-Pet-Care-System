@@ -67,6 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Registration</title>
     <link rel="stylesheet" href="css/registration.css">
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
 </head>
 <body>
 

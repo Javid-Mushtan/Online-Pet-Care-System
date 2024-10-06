@@ -81,6 +81,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/profile_menu.css">
     <link rel="stylesheet" href="css/services_admin.css">
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
 
     <script src="js/main.js" defer></script>
 </head>

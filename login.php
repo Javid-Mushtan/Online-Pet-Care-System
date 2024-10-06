@@ -7,6 +7,8 @@
     <title>PetLife Co - Login</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login/Lstyles.css">
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
 </head>
 <body>
     <!-- <?php require 'include/header.php' ?> -->

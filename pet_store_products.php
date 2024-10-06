@@ -9,6 +9,8 @@
     <script src="js/side_menubar.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/user_profile/my_cart/cart_script.js" defer></script>
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
 
     <title>Pet Store</title>
 

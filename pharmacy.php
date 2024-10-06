@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pet_store/product_page.css">
     <link rel="stylesheet" href="css/pharmacy.css">
+    <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
+
     
     <script src="js/main.js" defer></script>
 </head>
