@@ -48,7 +48,10 @@
                 <h1>Revenue</h1>
                 <canvas id="revenue-chart" width="500" height="400"></canvas>
                 <h2>Today</h2>
+                <h1>Rs. 15000.00</h1>
                 <h2>Last week</h2>
+                <h1>Rs. 85000.00</h1>
+
             </div>
             <div class="grid-item-3 item">
                 <h1>Appointments</h1>

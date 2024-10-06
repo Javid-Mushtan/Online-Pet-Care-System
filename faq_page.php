@@ -33,31 +33,31 @@
                 <div class="FAQ-item">
                     <button class="FAQ-question">General Questions</button>
                     <div class="FAQ-answer">
-                        <p>Here are some general questions and answers...</p>
+                        <p>Welcome to our area dedicated to Frequently Asked Questions (FAQ)! Answers to some of the most frequently asked questions concerning our policies, goods, and services can be found here. This section has all the information you need, whether you're wondering how to sign up, want to learn more about the services we offer, or need assistance navigating the website. Please contact our customer support team if you are unable to find the answer to your query here.</p>
                     </div>
                 </div>
                 <div class="FAQ-item">
                     <button class="FAQ-question">Order Process</button>
                     <div class="FAQ-answer">
-                        <p>Here is how our order process works...</p>
+                        <p>Our goal is to make ordering from our pet supply online as easy and seamless as we can. We'll walk you through every step of placing an order in this section, from choosing your products to finishing the checkout procedure. Additionally, you'll find details on order tracking, payment methods, and what to do in the event that something goes wrong. This guide will make sure that your pet medication, toys, and grooming supplies are all purchased smoothly.</p>
                     </div>
                 </div>
                 <div class="FAQ-item">
                     <button class="FAQ-question">Payment Information</button>
                     <div class="FAQ-answer">
-                        <p>Details about payment options and processing...</p>
+                        <p>For the convenience and peace of mind that comes with buying, we provide a range of safe payment methods. This section contains information on the available payment options, instructions for using gift cards and discount codes, and responses to frequently asked issues regarding payment security. Whether you want to handle your payments using PayPal, credit cards, or other channels, we guarantee a secure and quick processing experience. Our support staff is here to assist you if you have any questions or concerns regarding payments.</p>
                     </div>
                 </div>
                 <div class="FAQ-item">
                     <button class="FAQ-question">Services Information</button>
                     <div class="FAQ-answer">
-                        <p>Learn more about the services we provide...</p>
+                        <p>This section contains all the information you need to know about the services we offer, such as grooming, dog walking, pet training, and pharmacy options. It also explains how to schedule appointments, what to expect during each service, and the policies we have in place to ensure a smooth experience for both you and your pet. If you have any more questions, please don't hesitate to contact our team. We strive to provide a wide range of pet care services to keep your furry friends happy and healthy.</p>
                     </div>
                 </div>
                 <div class="FAQ-item">
                     <button class="FAQ-question">Account Management</button>
                     <div class="FAQ-answer">
-                        <p>Manage your account settings and preferences...</p>
+                        <p>Managing your account on our website is simple and secure. In this section, you'll find information on creating an account, updating your personal details, changing your password, and managing your subscriptions or orders. Whether you're a new user or an existing customer looking to make updates, we’re here to guide you through every step of the process. If you encounter any issues, our support team is ready to assist you in keeping your account information up-to-date and secure.</p>
                     </div>
                 </div>
             </div>

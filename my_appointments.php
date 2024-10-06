@@ -103,7 +103,7 @@
                         $service = $row['service'];
                         $status = $row['status'];
 
-                        $get_pet_name_query = "select name from pet_data where pet_id=$pet_id";
+                        $get_pet_name_query = "select name from pet_data where pet_id='$pet_id'";
                         $pet_name_result = $conn->query($get_pet_name_query);
                         $pet_row = $pet_name_result->fetch_assoc();
 

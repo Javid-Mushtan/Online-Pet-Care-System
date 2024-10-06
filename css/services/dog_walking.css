@@ -1,5 +1,11 @@
 body {
     background-image: url("../../assets/images/services/dog_walking.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    height: 100vh;
 }
 
 .hero-banner {
@@ -54,5 +60,15 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+#bookingForm input, select {
+    margin: 0 50px;
+    font-size: 1.5rem;
+}
+
+#bookingForm button {
+    padding: 10px 15px;
+    font-size: 1.5rem;
 }
 

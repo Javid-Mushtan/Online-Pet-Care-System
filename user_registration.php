@@ -76,6 +76,7 @@
             flex-direction: column;
             padding: 30px 30px;
             margin: 150px auto;
+            background-color: white;
 
         }
 
@@ -199,20 +200,6 @@
             console.log(password)
             console.log(cpassword)
         }
-
-        function test() {
-            document.getElementById("fname").value = "test";
-            document.getElementById("lname").value = "test";
-            document.getElementById("pnumber").value = "0707181470";
-            document.getElementById("email").value = "test1234@gmail.com";
-            document.getElementById("password").value = "test1234";
-            document.getElementById("c-password").value = "test1234";
-            document.getElementById("street").value = "test";
-            document.getElementById("city").value = "test";
-            document.getElementById("postal_code").value = "12345";
-        }
-
-        test();
     </script>
     <?php require 'include/footer.php' ?>
 </body>
