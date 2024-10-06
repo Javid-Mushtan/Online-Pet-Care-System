@@ -11,6 +11,12 @@
     <script src="js/user_profile/my_cart/cart_script.js" defer></script>
 
     <title>Pet Store</title>
+
+    <style>
+        .content {
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
     <?php require 'include/header.php' ?>
@@ -72,7 +78,12 @@
                                     <p class="product-price">Rs.<?php echo $product_price?></p>
                                 </div>
                             </a>
-                            <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>
+                            <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+                            ?>
+                                <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>
+                            <?php
+                            }
+                            ?>
                         </div>  
                         
     <?php

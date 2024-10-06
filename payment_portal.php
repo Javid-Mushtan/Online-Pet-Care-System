@@ -5,7 +5,9 @@
     function emptyCart($id) {
         global $conn;
         $empty_cart_query = "delete from cart where customer_id=$id";
+        $purchase_freq_query = "update user_data set purchase_freq=purchase_freq+1 where user_id=$id";
         $conn->query($empty_cart_query);
+        $conn->query($purchase_freq_query);
     }
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -25,7 +27,7 @@
         emptyCart($userid);
 
         $conn->close();
-        header("Location: my_cart.php");
+        header("Location: purchase_confirmation_page.html");
         exit;
     }
 ?>

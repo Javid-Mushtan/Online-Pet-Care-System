@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Care Pharmacy</title>
-    <link rel="stylesheet" href="css/pharmacy.css">
-    <link rel="stylesheet" href="css/pet_store/product_page.css">
     <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="css/pet_store/product_page.css">
+    <link rel="stylesheet" href="css/pharmacy.css">
+    
     <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -59,7 +59,12 @@
                                     <p class="product-price">Rs.<?php echo $product_price?></p>
                                 </div>
                             </a>
-                            <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>
+                            <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+                            ?>
+                                <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>
+                            <?php
+                            }
+                            ?>
                         </div>  
                 <?php
                         }
@@ -70,32 +75,7 @@
                 
                 
             </div>
-            <!-- <div class="product-list">
-                <div class="product">
-                    <img src="st.jpg" alt="Item7">
-                    <h2>Skin & Stomach Medicine</h2>
-                    <p>Price: Rs.2500.00</p>
-                    <button onclick="addToCart('Skin & Stomach Medicine',2500)">Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="seresto.jpg" alt="Item 8">
-                    <h2>Flea & Tick Collar</h2>
-                    <p>Price: Rs.4800.00</p>
-                    <button onclick="addToCart('Flea & Tick Collar',4800)">Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="spray.jpg" alt="Item 9">
-                    <h2>Pain Releaf Sprays</h2>
-                    <p>Price: Rs.5000.00</p>
-                    <button onclick="addToCart('Pain Releafe Sprays',5000)">Add to Cart</button>
-                </div>
-            </div> -->
-            <!--<div class="cart"> 
-                <h2>Shopping Cart</h2>
-                <ul id="cart-items"></ul>
-                <p id="total-price">Total: Rs.0.00</p>
-                <button id="checkout" onclick="checkout()">Checkout</button>
-            </div>-->
+            
         </main>
     </div>
     <script>
@@ -118,5 +98,7 @@
             .catch(error => console.error("Request Failed:", error))
         }
     </script>
+
+    <?php require 'include/footer.php' ?>
 </body>
 </html>

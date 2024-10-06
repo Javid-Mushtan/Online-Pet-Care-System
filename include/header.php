@@ -56,9 +56,10 @@
             <input type='text'>
             <button type='submit' class='search-btn'><img src='assets/icons/search-icon.png'></button>
         </form>
-
-        <a href='login.php'><button class='login-signup-btn'>Login</button></a>
-        <a href='user_registration.php'><button class='login-signup-btn'>Sign up</button></a>
+        <div>
+            <a href='login.php'><button class='login-signup-btn'>Login</button></a>
+            <a href='user_registration.php'><button class='login-signup-btn'>Sign up</button></a>
+        </div>
     </nav>
 </header>";
     }
