@@ -22,8 +22,8 @@
 
         <a href='index.php'><img id='logo' src='assets/images/logo.jpeg' alt='' width='80px'></a>
 
-        <form action=''>
-            <input type='text'>
+        <form action='process/search.php', method='POST'>
+            <input type='text' name='search-term'>
             <button type='submit' class='search-btn'><img src='assets/icons/search-icon.png'></button>
         </form>
 
@@ -52,8 +52,8 @@
 
         <a href='index.php'><img id='logo' src='assets/images/logo.jpeg' alt='' width='80px'></a>
 
-        <form action=''>
-            <input type='text'>
+        <form action='process/search.php' method='POST'>
+            <input type='text' name='search-term'>
             <button type='submit' class='search-btn'><img src='assets/icons/search-icon.png'></button>
         </form>
         <div>
