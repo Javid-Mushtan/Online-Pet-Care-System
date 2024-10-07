@@ -138,7 +138,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : '';
             <?php if (!empty($walkers)): ?>
                 <?php foreach ($walkers as $walker): ?>
                     <div class="walker-card">
-                        <img src="assets/images/<?php echo $walker['image']; ?>" alt="Walker" class="walker-icon">
+                        <!-- <img src="assets/images/<?php echo $walker['image']; ?>" alt="Walker" class="walker-icon"> -->
                         <h3><?php echo htmlspecialchars($walker['first_name']) . ' ' . htmlspecialchars($walker['last_name']); ?></h3>
                         <p> **<?php echo $walker['reviews']; ?> reviews**</p>
                         <p>Rs. <?php echo $walker['rate']; ?>/day</p>
