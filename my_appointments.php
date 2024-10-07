@@ -83,6 +83,10 @@
         .cancel-btn:hover {
             cursor: pointer;
         }
+
+        .profile-content {
+            overflow-y: scroll;
+        }
     </style>
 </head>
 <body>

@@ -60,9 +60,9 @@ if (isset($_POST['delete_Account'])) {
 
 // Check if the form is submitted to upload a new profile picture
 if (isset($_POST['upload_photo'])) {
-    $target_dir = "uploads/"; // Directory to save uploaded images
-    $target_file = $target_dir . basename($_FILES["user_image"]["name"]);
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $target_dir = "profile_pictures/users/"; // Directory to save uploaded images
+    $image_name = basename($_FILES["user_image"]["name"]);
+    $target_file = $target_dir . $image_name;
     
     // Check if the uploaded file is an image
     $check = getimagesize($_FILES["user_image"]["tmp_name"]);
@@ -70,7 +70,7 @@ if (isset($_POST['upload_photo'])) {
         // Move the uploaded file to the target directory
         if (move_uploaded_file($_FILES["user_image"]["tmp_name"], $target_file)) {
             // Update the user image path in the database
-            $update_image_query = "UPDATE User_Data SET user_image_path='$target_file' WHERE user_id='$user_id'";
+            $update_image_query = "UPDATE User_Data SET user_image_path='$image_name' WHERE user_id='$user_id'";
             mysqli_query($conn, $update_image_query);
             $message = "Image uploaded successfully.";
         } else {
@@ -90,6 +90,7 @@ if ($row = mysqli_fetch_assoc($result)) {
     $lname = $row['last_name'];
     $email = $row['email'];
     $user_image_path = $row['user_image_path'];
+    $_SESSION['profile_picture'] = $user_image_path;
 } else {
     die("Error: User not found.");
 }

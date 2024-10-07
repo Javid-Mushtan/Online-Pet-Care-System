@@ -53,14 +53,14 @@
 
                 ?>
                         <div class="product-card">
-                            <a href="product" class="product-link">
+                            <!-- <a href="product" class="product-link"> -->
                                 <img src="assets/images/product_images/<?php echo $product_image?>" alt="" class="product-image">
                                 <div class="product-info">
                                     <h2 class="product-name"><?php echo $product_name?></h2>
                                     <span class="product-rating"><span class="rating-yellow"><?php echo createRatingString($rating_y)?></span></span>
                                     <p class="product-price">Rs.<?php echo $product_price?></p>
                                 </div>
-                            </a>
+                            <!-- </a> -->
                             <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
                             ?>
                                 <button class="add-to-cart-btn" onclick="addToCart(<?php echo $product_id ?>)">Add To cart</button>

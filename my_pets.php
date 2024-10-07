@@ -20,11 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_pet_id'])) {
     $pet_id = $conn->real_escape_string($_POST['delete_pet_id']);
     $delete_query = "DELETE FROM Pet_Data WHERE pet_id='$pet_id' AND owner_id='$user_id'";
 
-    if ($conn->query($delete_query)) {
-        echo "Pet deleted successfully.";
-    } else {
-        echo "Error: " . $conn->error;
-    }
+    // if ($conn->query($delete_query)) {
+    //     echo "Pet deleted successfully.";
+    // } else {
+    //     echo "Error: " . $conn->error;
+    // }
 }
 
 // Fetch the user's pets
