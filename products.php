@@ -5,7 +5,9 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $pname = $_POST['pname'];
         $ptype = $_POST['ptype'];
+        $pprice = $_POST['pprice'];
         $stock = $_POST['stock'];
+        $rating = $_POST['rating'];
 
         $target_dir = "assets/images/product_images/";
         $image_name = basename($_FILES['pimage']['name']);
@@ -17,7 +19,7 @@
         }
 
         $query = "insert into product_data(product_name, product_price, product_rating, product_type, current_stock, product_image_path)
-                  values('$pname', '$pprice', 0, '$ptype', $stock, '$pimage')";
+                  values('$pname', '$pprice', $rating, '$ptype', $stock, '$image_name')";
 
         if (!$conn->query($query)) {
             die("Add product failed");
@@ -93,6 +95,7 @@
             <a href="dashboard.php" class="btn active">Dashboard</a>
             <a href="users_admin.php" class="btn">Users</a>
             <a href="appointments.php" class="btn">Appointments</a>
+            <a href="products.php" class="btn">Products</a>
             <a href="services_admin.php" class="btn">Services</a>
             <a href="admin_inquiry.php" class="btn">Inquiry</a>
             <button id="log-out-btn"><a href="process/log_out.php">Log out</a></button>
@@ -106,7 +109,8 @@
                 <label for="ptype">Product Type</label>
                 <select name="ptype" id="ptype" required>
                     <option value="pet_care">Pet Care</option>
-                    <option value="pet_food">Pet Care</option>
+                    <option value="pet_food">Pet Food</option>
+                    <option value="pet_treat">Pet Treats</option>
                     <option value="medicine">Pet Medicine</option>
                 </select>
 
@@ -115,6 +119,9 @@
 
                 <label for="stock">Stock</label>
                 <input type="number" name="stock" id="stock" min=0 required>
+
+                <label for="rating">Product Rating</label>
+                <input type="number" name="rating" id="rating" min=0 max=5 placeholder="1-5"required>
 
                 <label for="pimage">Product Image</label>
                 <input type="file" name="pimage" id="image" requried>

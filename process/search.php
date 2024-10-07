@@ -12,6 +12,7 @@
             case 'vet': header("Location: ../vet.php"); exit; break;
             case 'food': header("Location: ../pet_store_products.php?section=food"); exit; break;
             case 'pet care': header("Location: ../pet_store_products.php?section=health"); exit; break;
+            case 'treats': header("Location: ../pet_store_products.php?section=treat"); exit; break; 
 
             default: header("Location: ../index.php"); exit; break;
         }
