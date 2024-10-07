@@ -155,7 +155,7 @@ $message = isset($_GET['message']) ? $_GET['message'] : '';
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>No dog walkers found.</p>
+                <p style="font-size: 45px ; color: white; "><b>Enter Postal Code ! </b></p>
             <?php endif; ?>
         </section>
 
