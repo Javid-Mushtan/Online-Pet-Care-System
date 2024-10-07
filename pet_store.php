@@ -59,10 +59,6 @@
             <img src="assets/images/product_images/cat_food.jpeg" alt="">
             <a href="pet_store_products.php?section=treats"><button>Treats</button></a>
         </div>
-        <div class="category">
-            <img src="assets/images/product_images/cat_food.jpeg" alt="">
-            <a href="pet_store_products.php?section=clearance"><button>Clearance</button></a>
-        </div>
     </div>
 
     <section class="card-slider">
