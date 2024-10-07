@@ -12,13 +12,14 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $userid = $_SESSION['userid'];
-        $card_number = $_POST['card-number'];
-        $exp_date = $_POST['exp-date'];
-        $cvc = $_POST['cvc'];
-        $name = $_POST['name'];
-
+        
         if (isset($_POST['option'])) {
+            $card_number = $_POST['card-number'];
+            $exp_date = $_POST['exp-date'];
+            $cvc = $_POST['cvc'];
+            $name = $_POST['name'];
             $save = $_POST['option'];
+
             if ($save == "save") {
                 $save_card_query = "insert into payment_info(customer_id, customer_name, card_number, expiry_date, card_verification_code) values($userid, '$name', '$card_number', '$exp_date', '$cvc');";
                 $conn->query($save_card_query);
@@ -75,7 +76,7 @@
         <button class="accordion">Cash On Delivery</button>
         <div class="panel">
             <button class="address-autofill-btn" onclick="getAddressInfo()">Auto Fill</button>
-            <form action="process/payment_portal/payment_portal.php?method=cod" method="POST" id="card-form" id="card-form" class="payment-form">
+            <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" id="card-form" id="card-form" class="payment-form">
                 <label for="full-name">Full Name</label><br>
                 <input type="text" name="full-name" id="full-name" required><br>
 

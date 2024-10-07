@@ -199,8 +199,6 @@
             } else {
                 status.innerText = "❌"
             }
-            console.log(password)
-            console.log(cpassword)
         }
     </script>
     <?php require 'include/footer.php' ?>
