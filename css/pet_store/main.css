@@ -41,6 +41,8 @@ button {
     border: 1px solid black;
 }
 
+/* credit: https://youtu.be/j18CH0Grhbw */
+
 @keyframes slide_animation {
     0% {left: 0px;}
     10% {left: 0px;}

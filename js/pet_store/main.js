@@ -1,3 +1,5 @@
+// credit: www.w3school.com
+
 const slider = document.getElementById('slider')
 const prevBtn = document.getElementById('prevBtn')
 const nextBtn = document.getElementById('nextBtn')
