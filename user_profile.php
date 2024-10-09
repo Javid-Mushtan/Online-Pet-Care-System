@@ -5,28 +5,28 @@
     require 'process/connect_dbshop.php';
 
     
-// Check if the user is logged in
+
 if (!isset($_SESSION['userid'])) {
     header("Location: login.php");
     exit();
 }
 
-// Store the logged-in user's ID
+
 $user_id = $_SESSION['userid'];
 
-// Check if the form is submitted to update the profile
+// form is submitted to update the profile
 if (isset($_POST['update_profile'])) {
     // Fetch updated data from the form
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     
-    // Update the user's information in the database
+    // Update user's information 
     $update_query = "UPDATE User_Data SET first_name='$fname', last_name='$lname', email='$email' WHERE user_id='$user_id'";
     mysqli_query($conn, $update_query);
 }
 
-// Check if the form is submitted to reset the password
+// reset the password
 if (isset($_POST['reset_password'])) {
     $current_password = $_POST['current_password'];
     $new_password = $_POST['new_password'];
@@ -48,7 +48,7 @@ if (isset($_POST['reset_password'])) {
     }
 }
 
-// Check if the form is submitted to delete the account
+// delete the account
 if (isset($_POST['delete_Account'])) {
     $delete_AC = "DELETE FROM User_Data WHERE user_id='$user_id'";
     mysqli_query($conn, $delete_AC);
@@ -82,7 +82,7 @@ if (isset($_POST['upload_photo'])) {
     }
 }
 
-// Fetch the user's current profile details including image path
+// Fetch  current profile details
 $query = "SELECT first_name, last_name, email, user_image_path FROM User_Data WHERE user_id='$user_id'";
 $result = mysqli_query($conn, $query);
 

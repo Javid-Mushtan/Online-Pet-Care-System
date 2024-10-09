@@ -1,7 +1,7 @@
 <?php
 
 
-session_start(); // Start the session
+session_start(); 
 
 
 require "process/connect_dbshop.php";
@@ -17,8 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pgender = $_POST['pet_gender'];
     $pnote = $_POST['pet_note'];
 
-    $photo = ''; // Default photo variable to store the file path
-     
+    $photo = ''; // Default photo  
 
     //Credit: https://youtu.be/JaRq73y5MJk?si=UbyQIMNkhNDmeWtL
     // Handle the uploaded file
@@ -113,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="pet_photo">Pet Photo</label>
                     <input type="file" id="myFile" name="pet_photo"> 
 
-                    <!-- Button wrapper -->
+                    
                     <div class="R-button-wrapper">
                         <button type="submit">Register Now</button>
                     </div>

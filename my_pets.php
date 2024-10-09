@@ -2,14 +2,14 @@
 
 session_start(); // Start the session
 
-// Check if the user is logged in by checking if 'user_id' exists in the session
+
 if (!isset($_SESSION['userid'])) {
-    die("Error: You must be logged in to access this page."); // If not logged in, display an error message
+    die("Error: You must be logged in to access this page."); /
 }
 
 require "process/connect_dbshop.php";
 
-// Store the logged-in user's ID from the session
+
 $user_id = $_SESSION['userid'];
 
 // Handle delete request
@@ -59,15 +59,15 @@ $pname_result = mysqli_query($conn, $query);
 
             <!-- Main Content -->
             <div id="main">
-                <h2 class="title-section">My Pets</h2> <!-- Title for the pets section -->
+                <h2 class="title-section">My Pets</h2>
                 <button class="add-pet-btn" onclick="location.href='pet_registration.php';">Add New Pet</button> <!-- Button to add new pet -->
 
                 <!-- Pet Cards Section -->
                 <section class="pet-cards">
                     <?php
-                    // Check if any pets are found
+                    
                     if (mysqli_num_rows($pname_result) > 0) {
-                        // Iterate through each pet and create a card
+                        // create a card
                         while ($row = mysqli_fetch_assoc($pname_result)) {
                             echo '<div class="pet-card">';
                             echo '<img src="profile_pictures/pets/' . htmlspecialchars($row['pet_image_path']) . '" alt="Pet Image" class="pet-image">'; // Fetch and display pet image
@@ -86,11 +86,8 @@ $pname_result = mysqli_query($conn, $query);
                 </div>
         </div>
 
-        <!-- Footer -->
-        <!-- <footer>
-            <p>PetLife Co pvt ltd &copy; 2024</p>
-            <p><a href="#">Contact Us</a> | <a href="#">About Us</a></p>
-        </footer> -->
+      
+
     </div>
 
     <script src="scripts.js">
@@ -98,9 +95,8 @@ $pname_result = mysqli_query($conn, $query);
 
         // Event listener for the "Add New Pet" button
         document.getElementById('addPetBtn').addEventListener('click', function() {
-            alert('Redirecting to add new pet page...'); // Placeholder action for adding a new pet
-            // You can redirect to a new page or open a modal for adding a new pet
-            // window.location.href = 'add-pet.html'; // Example of redirecting
+            alert('Redirecting to add new pet page...'); 
+            
         });
 
     </script> 

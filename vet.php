@@ -1,16 +1,16 @@
 
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
-// Check if the user is logged in by checking if 'user_id' exists in the session
+
 if (!isset($_SESSION['userid'])) {
     header("Location: login.php");
 }
 
 require "process/connect_dbshop.php";
 
-// Fetch employee data where service_provided is 'vet'
+// Fetch employee  'vet'
 $query = "SELECT emp_id, first_name, last_name, email FROM Employee WHERE service_provided = 'vet'";
 $result = $conn->query($query);
 
@@ -21,7 +21,7 @@ $user_result = $conn->query($user_query);
 $user_data = $user_result->fetch_assoc();
 $user_postal_code = $user_data['postal_code'];
 
-// Fetch pet data for the logged-in user
+// Fetch pet data 
 $pet_query = "SELECT pet_id, name FROM Pet_Data WHERE owner_id = '$user_id'";
 $pet_result = $conn->query($pet_query);
 
@@ -33,11 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['appointment_time'])) {
     $appointment_date = date("Y-m-d");
     $appointment_time = $_POST['appointment_time'];
 
-    // Prepare the SQL statement
+    
     $insert_query = "INSERT INTO Appointment (customer_id, vet_id, pet_id, service_id, service, appointment_date, appointment_time, postal_code, status)
                      VALUES ($user_id, $vet_id, $pet_id, $service_id, 'Veterinary care', '$appointment_date', '$appointment_time', $user_postal_code, 'pending')";
 
-    // Execute the query and check for errors
+    
     if ($conn->query($insert_query)) {
         // Redirect to the same page to prevent form resubmission
         header("Location: vet.php");
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['appointment_time'])) {
     }
 }
 
-// Fetch service rate for veterinary services (service ID 503)
+// Fetch service rate for veterinary services 
 $service_query = "SELECT service_rate FROM Services WHERE service_id = 503";
 $service_result = $conn->query($service_query);
 $service_data = $service_result->fetch_assoc();
@@ -82,7 +82,7 @@ $service_rate = $service_data['service_rate'];
 
     <!-- Main Content -->
     <div class="content">
-        <!-- Title Section -->
+        
         <section class="title-section">
             <h2>Select a Vet for your appointment</h2>
         </section>
@@ -125,7 +125,7 @@ $service_rate = $service_data['service_rate'];
     <script>
     function confirmAndSetTime(time, form) {
         if (confirm('Are you sure you want to book this appointment for TODAY at ' + time + '?')) {
-            form.appointment_time.value = time; // Set the appointment_time value
+            form.appointment_time.value = time; 
             form.submit(); // Submit the form
         }
     }

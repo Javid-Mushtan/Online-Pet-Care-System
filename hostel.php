@@ -10,18 +10,18 @@ require "process/connect_dbshop.php";
 $user_id = $_SESSION['userid'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get form data
+
     $pet_id = $_POST['pet'];
     $checkin_date = $_POST['checkin_date'];
     $checkout_date = $_POST['checkout_date'];
     $hostel_type = $_POST['hostelOption'];
 
-    // Ensure hostel option is selected
+    
     if (empty($hostel_type)) {
         echo "<script>alert('Error: Please select a hostel option.');</script>";
     } else {
 
-        // Insert booking details into the Appointment table
+        
         $query = "INSERT INTO Appointment(customer_id, pet_id, service_id, service, checkin_date, checkout_date, hostel_type, status)
                   VALUES ($user_id, $pet_id, 502, 'Pet hostel', '$checkin_date', '$checkout_date', '$hostel_type', 'pending')";
 
@@ -130,7 +130,7 @@ function selectHostel(hostel) {
     const cards = document.querySelectorAll('.hostel-card');
     cards.forEach(card => card.classList.remove('selected'));
 
-    // Add 'selected' class to the clicked card
+    // Add 'selected' class to card
     if (hostel === 'Standard') {
         document.getElementById('standardCard').classList.add('selected');
     } else if (hostel === 'Kitty House') {
