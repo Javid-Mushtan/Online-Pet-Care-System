@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $photo = ''; // Default photo variable to store the file path
      
 
-    //Credit: Chatgpt
+    //Credit: https://youtu.be/JaRq73y5MJk?si=UbyQIMNkhNDmeWtL
     // Handle the uploaded file
     if (isset($_FILES['pet_photo']) && $_FILES['pet_photo']['error'] == 0) {
         $target_dir = "profile_pictures/pets/";

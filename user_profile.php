@@ -1,11 +1,14 @@
 <?php
+    session_start();
+
 
     require 'process/connect_dbshop.php';
 
     
 // Check if the user is logged in
 if (!isset($_SESSION['userid'])) {
-    die("Error: You must be logged in to access this page.");
+    header("Location: login.php");
+    exit();
 }
 
 // Store the logged-in user's ID
@@ -61,7 +64,7 @@ if (isset($_POST['upload_photo'])) {
     $target_file = $target_dir . $image_name;
     
 
-    //Credit: Chatgpt
+    //Credit: https://youtu.be/JaRq73y5MJk?si=UbyQIMNkhNDmeWtL
     // Check if the uploaded file is an image  
     $check = getimagesize($_FILES["user_image"]["tmp_name"]);
     if ($check !== false) {
