@@ -64,7 +64,9 @@ if (isset($_POST['upload_photo'])) {
     $image_name = basename($_FILES["user_image"]["name"]);
     $target_file = $target_dir . $image_name;
     
-    // Check if the uploaded file is an image
+
+    //Credit: Chatgpt
+    // Check if the uploaded file is an image  
     $check = getimagesize($_FILES["user_image"]["tmp_name"]);
     if ($check !== false) {
         // Move the uploaded file to the target directory

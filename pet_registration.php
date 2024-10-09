@@ -24,14 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pnote = $_POST['pet_note'];
 
     $photo = ''; // Default photo variable to store the file path
+     
 
+    //Credit: Chatgpt
     // Handle the uploaded file
     if (isset($_FILES['pet_photo']) && $_FILES['pet_photo']['error'] == 0) {
         $target_dir = "profile_pictures/pets/";
         $target_file = $target_dir . basename($_FILES["pet_photo"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-        // Validate the image file
+     // Validate the image file
         $check = getimagesize($_FILES["pet_photo"]["tmp_name"]);
         if ($check !== false) {
             if (move_uploaded_file($_FILES["pet_photo"]["tmp_name"], $target_file)) {
@@ -45,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+
+    
     // Insert into the database
     $sql = "INSERT INTO Pet_Data(owner_id, name, age, breed, gender, weight, pet_type, pet_image_path, pet_note) 
             VALUES ('$user_id', '$pname', '$page', '$pbreed', '$pgender', '$pweight', '$ptype', '$photo', '$pnote')";
