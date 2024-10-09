@@ -1,14 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 session_start(); // Start the session
 
-// Check if the user is logged in by checking if 'user_id' exists in the session
-// if (!isset($_SESSION['user_id'])) {
-//     die("Error: You must be logged in to access this page."); // If not logged in, display an error message
-// }
 
 require "process/connect_dbshop.php";
 
@@ -47,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    
+
     // Insert into the database
     $sql = "INSERT INTO Pet_Data(owner_id, name, age, breed, gender, weight, pet_type, pet_image_path, pet_note) 
             VALUES ('$user_id', '$pname', '$page', '$pbreed', '$pgender', '$pweight', '$ptype', '$photo', '$pnote')";
