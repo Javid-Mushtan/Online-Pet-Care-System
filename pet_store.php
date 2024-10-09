@@ -57,7 +57,7 @@
         </div>
         <div class="category">
             <img src="assets/images/product_images/cat_food.jpeg" alt="">
-            <a href="pet_store_products.php?section=treats"><button>Treats</button></a>
+            <a href="pet_store_products.php?section=treat"><button>Treats</button></a>
         </div>
     </div>
 

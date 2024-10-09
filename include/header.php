@@ -1,6 +1,8 @@
 <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $profile_picture = $_SESSION['profile_picture'];
+        $user_type = $_SESSION['user_type'];
+    
         echo "<header>
 
     <div class='off-screen-menu'>
@@ -13,21 +15,23 @@
         </ul>
     </div>
 
-    <nav>
-        <div class='hb_menu'>
+    <nav>";
+    if ($user_type != 'employee') {
+        echo "<div class='hb_menu'>
             <div></div>
             <div></div>
             <div></div>
         </div>
-
+    
         <a href='index.php'><img id='logo' src='assets/images/logo.jpeg' alt='' width='80px'></a>
-
+    
         <form action='process/search.php', method='POST'>
             <input type='text' name='search-term'>
             <button type='submit' class='search-btn'><img src='assets/icons/search-icon.png'></button>
-        </form>
+        </form>";
+    }
 
-        <a href='".$_SESSION['profile_path']."'><img id='user_profile_picture' src='profile_pictures/users/$profile_picture' alt='' width='80px' height='80px'></a>
+        echo "<a href='".$_SESSION['profile_path']."'><img id='user_profile_picture' src='profile_pictures/users/$profile_picture' alt='' width='80px' height='80px'></a>
     </nav>
 </header>";
     } else {

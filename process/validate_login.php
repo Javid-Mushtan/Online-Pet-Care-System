@@ -23,22 +23,28 @@
         if ($results->num_rows > 0) {
             $row = $results->fetch_assoc();
             $stored_password = $row['password'];
+            $_SESSION['role'] = $row['role'];
+            $_SESSION['user_type'] = $user_type;
 
             if ($stored_password === $password) {
                 $_SESSION['loggedin'] = true;
                 if ($user_type == 'customer') {
                     $_SESSION['userid'] = $row['user_id'];
                     $_SESSION['profile_picture'] = $row['user_image_path'];
+                    header("Location: ../index.php");
+                    exit;
                 } else if ($user_type == 'employee') {
                     $_SESSION['userid'] = $row['emp_id'];
                     $_SESSION['profile_picture'] = "employee.jpg";
+                    header("Location: ../dashboard.php");
+                    exit;
                 }
 
-                $_SESSION['role'] = $row['role'];
+                // $_SESSION['role'] = $row['role'];
 
                 
-                header("Location: ../index.php");
-                exit;
+                // header("Location: ../index.php");
+                // exit;
             } else {
                 echo "Password Incorrect";
             }

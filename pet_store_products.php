@@ -50,6 +50,11 @@
                     case 'health': $product_type = "pet_care";
                                    $heading = "Pet Care";
                                    break;
+
+                    case 'treat': $product_type = "pet_treat";
+                                  $heading = "Pet Treats";
+                                  break;
+
                 }
 
     ?>

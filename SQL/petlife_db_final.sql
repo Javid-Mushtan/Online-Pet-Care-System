@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2024 at 02:59 PM
+-- Generation Time: Oct 07, 2024 at 02:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -49,10 +49,10 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`appointment_id`, `customer_id`, `pet_id`, `service_id`, `service`, `appointment_date`, `appointment_time`, `checkin_date`, `checkout_date`, `vet_id`, `service_freq`, `postal_code`, `hostel_type`, `status`) VALUES
-(34, 1005, 10, 503, 'Veterinary care', '2024-10-06', '10:30:00', NULL, NULL, 5007, NULL, 12345, NULL, 'approved'),
-(35, 1005, 10, 502, 'Pet hostel', '0000-00-00', NULL, '2024-10-06', '2024-10-08', NULL, NULL, NULL, 'Standard', 'pending'),
-(36, 1005, 10, 500, 'bath', '2024-10-06', '13:43:00', NULL, NULL, NULL, NULL, NULL, NULL, 'pending'),
-(38, 1005, 10, 501, 'walk', '2024-10-06', '13:55:00', NULL, NULL, NULL, 'One-time', 10300, NULL, 'pending');
+(43, 1005, 10, 503, 'Veterinary care', '2024-10-07', '10:30:00', NULL, NULL, 5014, NULL, 12345, NULL, 'pending'),
+(44, 1005, 10, 503, 'Veterinary care', '2024-10-07', '13:30:00', NULL, NULL, 5014, NULL, 12345, NULL, 'pending'),
+(45, 1005, 10, 503, 'Veterinary care', '2024-10-07', '10:30:00', NULL, NULL, 5016, NULL, 12345, NULL, 'pending'),
+(46, 1005, 10, 503, 'Veterinary care', '2024-10-07', '13:30:00', NULL, NULL, 5016, NULL, 12345, NULL, 'pending');
 
 -- --------------------------------------------------------
 
@@ -72,7 +72,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`item_id`, `product_id`, `customer_id`, `product_amount`) VALUES
-(4, 103, 1004, 2),
+(4, 103, 1004, 3),
 (5, 104, 1001, 1);
 
 -- --------------------------------------------------------
@@ -108,7 +108,8 @@ INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `city`, `street`, `
 (5006, 'manager', 'test', 'test', 'test', 12345, 'manager@gmail.com', 'e89ece7cf3b127d81487c7133d0d911f', 'manager', 'manager'),
 (5007, 'John', 'Doe', 'test', 'test', 12345, 'vet@gmail.com', 'f616d4a0d60e79eda97d049746172f3a', 'vet', 'staff'),
 (5014, 'John', 'Doe', 'test', 'deegala', 12345, 'test@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'vet', 'staff'),
-(5015, 'sanuja', 'rubasinghe', 'test', 'deegala', 1234, 'manager1@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'manager', 'manager');
+(5015, 'sanuja', 'rubasinghe', 'kothalawala', 'deegala', 1234, 'manager1@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'manager', 'manager'),
+(5016, 'Amantha', 'Perera', 'test', 'test', 1234, 'amantha@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'vet', 'staff');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,8 @@ INSERT INTO `employee_phone` (`emp_id`, `phone_num`) VALUES
 (5003, '0734567890'),
 (5004, '0745678901'),
 (5014, '0707181470'),
-(5015, '0707181470');
+(5015, '707181470'),
+(5016, '0707181470');
 
 -- --------------------------------------------------------
 
@@ -155,11 +157,7 @@ CREATE TABLE `inquiry` (
 INSERT INTO `inquiry` (`inquiry_id`, `customer_id`, `inquiry_date`, `inquiry_type`, `inquiry_description`) VALUES
 (1, 1000, '2024-09-29 12:14:22', 'service', 'Do you provide home visits for dog grooming?'),
 (2, 1001, '2024-09-29 12:14:22', 'vet', 'I want to change my vet.'),
-(3, 1002, '2024-09-29 12:14:22', 'product', 'When will new dog collars be available?'),
-(4, 1003, '2024-09-29 12:14:22', 'product', 'The water bowl I purchased is cracked. I want to return it.'),
-(5, 1004, '2024-09-29 12:14:22', 'service', 'Do you accomodate lizards in your pet hostel.'),
-(8, 1005, '2024-10-06 04:59:52', 'service', 'bad'),
-(9, 1005, '2024-10-06 04:59:56', 'service', 'bad');
+(3, 1002, '2024-09-29 12:14:22', 'product', 'When will new dog collars be available?');
 
 -- --------------------------------------------------------
 
@@ -269,7 +267,13 @@ INSERT INTO `product_data` (`product_id`, `product_name`, `product_price`, `prod
 (102, 'Dog Food', 500.00, 4, 'pet_food', 75, 'dog_food.jpeg'),
 (103, 'Ground Dog Food', 1500.75, 5, 'pet_food', 50, 'ground_dog_food.jpeg'),
 (104, 'hamster Wheel', 2000.00, 5, 'pet_care', 200, 'hamster_wheel.jpeg'),
-(105, 'Dental Powder', 1000.00, 3, 'medicine', 50, 'dental.jpg');
+(119, 'Dog Dewormer', 1000.00, 3, 'medicine', 100, 'm4.jpg'),
+(120, 'Cranbites', 1500.00, 4, 'medicine', 100, 'm2.jpeg'),
+(121, 'Puppy Forte-A', 2000.00, 3, 'medicine', 100, 'm3.png'),
+(122, 'Chelated Petomin Plus', 1500.00, 4, 'medicine', 100, 'm4.jpg'),
+(123, 'Milk Bone', 1500.00, 4, 'pet_treat', 100, 'pet_treat_1.jpeg'),
+(124, 'Milk Bone - F', 2000.00, 4, 'pet_treat', 100, 'pet_treat_2.jpg'),
+(125, 'Cesar softies', 500.00, 3, 'pet_treat', 100, 'pet_treat_5.jpeg');
 
 -- --------------------------------------------------------
 
@@ -296,7 +300,9 @@ INSERT INTO `report` (`report_id`, `report_type`, `report_date`, `metric_id`, `m
 (4, 'rev_report', '2024-12-02 18:30:00', 1, 5004),
 (5, 'usr_report', '2025-01-02 18:30:00', 1, 5004),
 (14, 'rev_report', '2024-10-05 18:30:00', 1, 5015),
-(15, 'usr_report', '2024-10-05 18:30:00', 2, 5015);
+(15, 'usr_report', '2024-10-05 18:30:00', 2, 5015),
+(16, 'rev_report', '2024-10-06 18:30:00', 1, 5015),
+(17, 'usr_report', '2024-10-06 18:30:00', 2, 5015);
 
 -- --------------------------------------------------------
 
@@ -351,7 +357,7 @@ INSERT INTO `user_data` (`user_id`, `first_name`, `last_name`, `city`, `street`,
 (1002, 'Dinithi', 'Dilshani', 'Kandy', 'third lane', 10300, 'dilshani@gmail.com', '9a011b4a4f64ac17779138796888a2ef', 'dilshani.jpeg', 0, 'customer'),
 (1003, 'S', 'Menurangi', 'Monaragala', 'fourth lane', 10400, 'menurangi@gmail.com', '887ed9d400305e823f17d05c7f09179e', 'menurangi.jpeg', 0, 'customer'),
 (1004, 'Javid', 'Mushtan', 'Matara', 'fifth lane', 10500, 'javid@gmail.com', '8dee9814672fe8b4a48d39e4af06a73d', 'javid.jpeg', 0, 'customer'),
-(1005, 'customer', 'test', 'test', '1st lane', 12345, 'customer@gmail.com', '668816e02d4658da91aa4526d8c61972', 'KadvuP.jpg', 5, 'customer');
+(1005, 'customer', 'test', 'test', '1st lane', 12345, 'customer@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'backgroundDefault.jpg', 10, 'customer');
 
 -- --------------------------------------------------------
 
@@ -477,25 +483,25 @@ ALTER TABLE `user_phone`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5016;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5017;
 
 --
 -- AUTO_INCREMENT for table `inquiry`
 --
 ALTER TABLE `inquiry`
-  MODIFY `inquiry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `inquiry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `metrics`
@@ -513,19 +519,19 @@ ALTER TABLE `payment_info`
 -- AUTO_INCREMENT for table `pet_data`
 --
 ALTER TABLE `pet_data`
-  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `product_data`
 --
 ALTER TABLE `product_data`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `services`

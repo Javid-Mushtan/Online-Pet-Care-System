@@ -10,17 +10,18 @@
     <link rel="icon" href="assets/images/logo.jpeg" sizes="16x16" type="image/jpeg">
 
     <script src="js/main.js" defer></script>
-    <script src="js/profile_router.js" defer></script>
     <title>Dashboard</title>
 </head>
 <body>
     <?php require 'include/header.php' ?>
+ 
 
     <div class="grid-container">
         <div class="sidebar">
             <a href="dashboard.php" class="btn active">Dashboard</a>
             <a href="users_admin.php" class="btn">Users</a>
             <a href="appointments.php" class="btn">Appointments</a>
+            <a href="products.php" class="btn">Products</a>
             <a href="services_admin.php" class="btn">Services</a>
             <a href="admin_inquiry.php" class="btn">Inquiry</a>
             <button id="log-out-btn"><a href="process/log_out.php">Log out</a></button>
